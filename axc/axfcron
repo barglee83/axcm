@@ -1,0 +1,9 @@
+* * * * * . /etc/profile.d/axf.sh; /usr/local/bin/axfclientreportstats.sh
+* * * * * . /etc/profile.d/axf.sh; /usr/local/bin/axfclientconfigman.sh
+* * * * * . /etc/profile.d/axf.sh; sleep 10; /usr/local/bin/axfclientconfigman.sh
+* * * * * . /etc/profile.d/axf.sh; sleep 20; /usr/local/bin/axfclientreportstats.sh
+* * * * * . /etc/profile.d/axf.sh; sleep 20; /usr/local/bin/axfclientconfigman.sh
+* * * * * . /etc/profile.d/axf.sh; sleep 30; /usr/local/bin/axfclientconfigman.sh
+* * * * * . /etc/profile.d/axf.sh; sleep 40; /usr/local/bin/axfclientreportstats.sh
+* * * * * . /etc/profile.d/axf.sh; sleep 40; /usr/local/bin/axfclientconfigman.sh
+* * * * * . /etc/profile.d/axf.sh; sleep 50; /usr/local/bin/axfclientconfigman.sh
