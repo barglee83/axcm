@@ -1,9 +1,9 @@
-* * * * * root /etc/profile.d/axf.sh; /usr/local/bin/axfclientreportstats.sh
-* * * * * root /etc/profile.d/axf.sh; /usr/local/bin/axfclientconfigman.sh
-* * * * * root /etc/profile.d/axf.sh; sleep 10; /usr/local/bin/axfclientconfigman.sh
-* * * * * root /etc/profile.d/axf.sh; sleep 20; /usr/local/bin/axfclientreportstats.sh
-* * * * * root /etc/profile.d/axf.sh; sleep 20; /usr/local/bin/axfclientconfigman.sh
-* * * * * root /etc/profile.d/axf.sh; sleep 30; /usr/local/bin/axfclientconfigman.sh
-* * * * * root /etc/profile.d/axf.sh; sleep 40; /usr/local/bin/axfclientreportstats.sh
-* * * * * root /etc/profile.d/axf.sh; sleep 40; /usr/local/bin/axfclientconfigman.sh
-* * * * * root /etc/profile.d/axf.sh; sleep 50; /usr/local/bin/axfclientconfigman.sh
+* * * * * root /etc/profile.d/axenv.sh; /usr/local/bin/axfclientreportstats.sh
+* * * * * root /etc/profile.d/axenv.sh; /usr/local/bin/axfclientconfigman.sh
+* * * * * root /etc/profile.d/axenv.sh; sleep 10; /usr/local/bin/axfclientconfigman.sh
+* * * * * root /etc/profile.d/axenv.sh; sleep 20; /usr/local/bin/axfclientreportstats.sh
+* * * * * root /etc/profile.d/axenv.sh; sleep 20; /usr/local/bin/axfclientconfigman.sh
+* * * * * root /etc/profile.d/axenv.sh; sleep 30; /usr/local/bin/axfclientconfigman.sh
+* * * * * root /etc/profile.d/axenv.sh; sleep 40; /usr/local/bin/axfclientreportstats.sh
+* * * * * root /etc/profile.d/axenv.sh; sleep 40; /usr/local/bin/axfclientconfigman.sh
+* * * * * root /etc/profile.d/axenv.sh; sleep 50; /usr/local/bin/axfclientconfigman.sh
