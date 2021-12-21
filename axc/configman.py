@@ -64,8 +64,8 @@ def main():
     headers['apikey']= apikey
     print(headers)
 
-    url = "http://"+endpoint+"/"+custid+"_"+lmid
-    response = requests.get(url,headers=headers)
+    url = "https://"+endpoint+"/"+custid+"_"+lmid
+    response = requests.get(url,headers=headers, verify=False)
     latestconfig = json.loads(response.text)
     print("Cloud Config")
     print(latestconfig)
