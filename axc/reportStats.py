@@ -161,10 +161,10 @@ def main():
 
     headers = {}
     headers['apikey']= apikey
-    url = 'http://'+endpoint+'/'+custid+"_"+lmid
+    url = 'https://'+endpoint+'/'+custid+"_"+lmid
     print(url)
     print(headers)
-    x = requests.post(url, data=app_json, headers=headers)
+    x = requests.post(url, data=app_json, headers=headers, verify=False)
     print(x.text)
 
 
