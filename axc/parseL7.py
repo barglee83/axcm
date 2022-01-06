@@ -35,9 +35,9 @@ def main():
 
     while 1:
         where = file.tell()
-        print("line loc is", where)
+        #print("line loc is", where)
         line = file.readline()
-        print("line is", line)
+        #print("line is", line)
         if not line:
             time.sleep(1)
             file.seek(where)
