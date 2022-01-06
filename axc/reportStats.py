@@ -40,14 +40,9 @@ def main():
         #elif current_argument in ("-m"):
         #    lmclusterid = current_value
 
-
-
-
     ## Query AxF for Latest config using lmid and custid
 
     lmcluster={}       # Full Dict Rep of a LoadMaster state and Metrics
-
-
 
     # For Now only support Single LoadMasters.
 
@@ -69,7 +64,7 @@ def main():
     #lmcluster['lm'].append(lm)
 
     url = "https://" + user + ":" + password + "@" + lmip + ":" + port + "/access/get?param=Hostname"
-    print(url)
+    print("reportStats.py -- LoadMaster Query", url)
     response = requests.get(url, verify=False)
     obj = xmltodict.parse(response.text)
     lmcluster['name']=obj['Response']['Success']['Data']['hostname']
@@ -77,7 +72,7 @@ def main():
     #--TEMP
     rsStatusByID={}
     url = "https://" + user + ":" + password + "@" + lmip + ":" + port + "/access/listvs"
-    print(url)
+    print("reportStats.py -- LoadMaster Query",url)
     response = requests.get(url, verify=False)
     obj = xmltodict.parse(response.text)
     rslist2 = []
@@ -90,7 +85,7 @@ def main():
 
 
     url = "https://" + user + ":" + password + "@" + lmip + ":" + port + "/access/stats"
-    print(url)
+    print("reportStats.py -- LoadMaster Query",url)
     response = requests.get(url, verify=False)
     obj = xmltodict.parse(response.text)
 
@@ -156,13 +151,13 @@ def main():
     #print(lmcluster)
 
     app_json = json.dumps(lmcluster)
-    print("HTTP POST")
+    print("reportStats.py -- HTTP POST to Send")
     print(app_json)
 
     headers = {}
     headers['apikey']= apikey
     url = 'https://'+endpoint+'/'+custid+"_"+lmid
-    print(url)
+    print("reportStats.py -- AXM URL",url)
     print(headers)
     x = requests.post(url, data=app_json, headers=headers, verify=False)
     print(x.text)
