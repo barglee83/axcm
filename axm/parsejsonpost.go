@@ -226,7 +226,7 @@ func parseGhPost(rw http.ResponseWriter, request *http.Request) {
     switch request.Method {
       case "GET":
             //fmt.Println("GET",request.URL.Path)
-            fmt.Printf("-------- SERVING OF LM CONFIG --------")
+            fmt.Printf("-------- SERVING OF LM CONFIG --------\n")
             filename= "config_"+strings.ReplaceAll(request.URL.Path, "/", "")+".json"
             //fmt.Println(filename)
             //See how old My Config is
@@ -237,13 +237,13 @@ func parseGhPost(rw http.ResponseWriter, request *http.Request) {
             fmt.Println(config)
             rw.Header().Set("Content-Type", "application/json")
             json.NewEncoder(rw).Encode(config)
-            fmt.Printf("--------COMPLETE SERVING OF LM CONFIG --------")
+            fmt.Printf("--------COMPLETE SERVING OF LM CONFIG --------\n")
 
       case "POST":
             //Keep a List of All LMs we know about - e.g. lmnow[id]
             //Extract LMID
             //lmbefore becomes lmnow[id]
-            fmt.Printf("--------POST of LM Stats--------")
+            fmt.Printf("--------POST of LM Stats--------\n")
 
             custid := strings.ReplaceAll(strings.Split(request.URL.Path, "_")[0],"/", "")
             fmt.Printf(custid)
@@ -273,7 +273,7 @@ func parseGhPost(rw http.ResponseWriter, request *http.Request) {
 
             //fmt.Println(lmnow)
             //fmt.Println(lmbefore)
-            fmt.Printf("--------COMPLETE PROCESSING POST of LM Stats--------")
+            fmt.Printf("--------COMPLETE PROCESSING POST of LM Stats--------\n")
       default:
     }
 
