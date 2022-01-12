@@ -8,7 +8,7 @@ import getopt
 def main():
     full_cmd_arguments = sys.argv
     argument_list = full_cmd_arguments[1:]
-    short_options = "c:l:"
+    short_options = "c:l:i:o:"
     long_options = ["help"]
     try:
         arguments, values = getopt.getopt(argument_list, short_options, long_options)
@@ -22,8 +22,12 @@ def main():
             custid = current_value
         elif current_argument in ("-l"):
             lmid = current_value
+        elif current_argument in ("-i"):
+            infile = current_value
+        elif current_argument in ("-o"):
+            outfile = current_value
 
-    file = open("messages","r")
+    file = open(infile,"r")
     newconnregex="(.*) [a-zA-Z0-9_.-]* kernel: L7: ([a-zA-Z0-9_.-]{16}): (SSL accept on|Accept on) (.*?..*?..*?..*?):(\w{1,5}) from (.*?..*?..*?..*?):(\w{1,5})?(.*)"
     rttconnregex="(.*) [a-zA-Z0-9_.-]* kernel: L7: ([a-zA-Z0-9_.-]{16}): Conn: dest RTT ([0-9]*)\/([0-9]*) us min ([0-9]*) us"
     closeregex="(.*) [a-zA-Z0-9_.-]* kernel: L7: ([a-zA-Z0-9_.-]{16}): conn release 7"
@@ -157,7 +161,7 @@ def main():
                         fields = [dict[lineconnid]["time"], "l7", custid, lmid, dict[lineconnid]["clientip"], dict[lineconnid]["clientport"], dict[lineconnid]["vsip"], dict[lineconnid]["vsport"], str(dict[lineconnid]["dstrtt1"]), str(dict[lineconnid]["dstrtt2"]), str(dict[lineconnid]["rttmin"]),
                                   dict[lineconnid]["ua"], dict[lineconnid]["persist"], dict[lineconnid]["querymethod"], dict[lineconnid]["rsip"], dict[lineconnid]["rsport"]
                                   , dict[lineconnid]["requesttime"], dict[lineconnid]["responsetime"], dict[lineconnid]["xfwdfor"], dict[lineconnid]["xfwdforport"], dict[lineconnid]["statuscode"]]
-                        out = open("l7.log", "a")
+                        out = open(outfile, "a")
                         out.write(','.join(fields))
                         out.write("\n")
                         out.close()
