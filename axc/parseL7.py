@@ -172,7 +172,7 @@ def main():
                         print ("Completed Object",dict[lineconnid])
                         fields = [dict[lineconnid]["time"], "l7", custid, lmid, dict[lineconnid]["clientip"], dict[lineconnid]["clientport"], dict[lineconnid]["vsip"], dict[lineconnid]["vsport"], str(dict[lineconnid]["dstrtt1"]), str(dict[lineconnid]["dstrtt2"]), str(dict[lineconnid]["rttmin"]),
                                   dict[lineconnid]["ua"], dict[lineconnid]["persist"], dict[lineconnid]["queryurl"], dict[lineconnid]["querymethod"], dict[lineconnid]["rsip"], dict[lineconnid]["rsport"]
-                                  , dict[lineconnid]["requesttime"], dict[lineconnid]["responsetime"], dict[lineconnid]["xfwdfor"], dict[lineconnid]["xfwdforport"], dict[lineconnid]["statuscode"]]
+                                  , str(dict[lineconnid]["requesttime"]), str(dict[lineconnid]["responsetime"]), dict[lineconnid]["xfwdfor"], dict[lineconnid]["xfwdforport"], str(dict[lineconnid]["statuscode"])]
                         out = open(outfile, "a")
                         out.write(','.join(fields))
                         out.write("\n")
