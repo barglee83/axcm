@@ -98,7 +98,7 @@ def main():
                 newsession["rsport"] = "0"
                 newsession["requesttime"] = 0
                 newsession["responsetime"] = 0
-                newsession["xfwdfor"] = "none"
+                newsession["xfwdfor"] = "255.255.255.255"
                 newsession["xfwdforport"] = "none"
                 newsession["statuscode"] = 0
 
