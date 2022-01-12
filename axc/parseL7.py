@@ -90,8 +90,20 @@ def main():
                 newsession["dstrtt1"]=0
                 newsession["dstrtt2"]=0
                 newsession["rttmin"]=0
+                newsession["ua"] = "none"
+                newsession["persist"] = "none"
+                newsession["querymethod"] = "unknown"
+                newsession["queryurl"] = "unknown"
+                newsession["rsip"] = "0.0.0.0"
+                newsession["rsport"] = "0"
+                newsession["requesttime"] = 0
+                newsession["responsetime"] = 0
+                newsession["xfwdfor"] = "none"
+                newsession["xfwdforport"] = "none"
+                newsession["statuscode"] = 0
+
                 dict[connid]=newsession
-                #print(dict)
+
             elif re.match(rttconnregex, line):
                 n=re.match(rttconnregex, line)
                 print("Match RTT")
