@@ -1,3 +1,5 @@
+#!/bin/bash
+. /etc/profile.d/axenv.sh
 if [ $AXFON == "Y" ]
 then
 echo $(date)>>/var/log/axf.log

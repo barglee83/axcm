@@ -1,4 +1,5 @@
 #!/bin/bash
+. /etc/profile.d/axenv.sh
 # Basic if statement
 if [ $AXFON == "Y" ]
 then
