@@ -109,6 +109,10 @@ def main():
             if m:
                 logtime = m.group(1)
                 connid = m.group(2)
+                ssl =0
+                print(m.group(3))
+                if ("SSL" in m.group(3)):
+                    ssl=1
                 clientip= m.group(6)
                 clientport=m.group(7)
                 vsip= m.group(4)
@@ -116,6 +120,7 @@ def main():
                 #newsession={key: "" for key in keys}
                 newsession={}
                 newsession["time"]=logtime
+                newsession["ssl"]=ssl
                 newsession["clientip"]=clientip
                 newsession["clientport"]=clientport
                 newsession["vsip"]=vsip
@@ -228,6 +233,7 @@ def main():
                                   "l7",
                                   custid,
                                   lmid,
+                                  str(dict[lineconnid]["ssl"]),
                                   dict[lineconnid]["clientip"],
                                   dict[lineconnid]["clientport"],
                                   dict[lineconnid]["vsip"],
