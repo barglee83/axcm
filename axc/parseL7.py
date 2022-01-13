@@ -88,7 +88,7 @@ def main():
     ## Need to ensure Some Response Processing being done e.g. Response Body Modification Rule Applied on VS
 
     dict={}
-    keys=["time","clientip", "clientport", "vsip", "vsport", "dstrtt1", "dstrtt2", "rttmin","ua", "persist", "querymethod", "queryurl", "rsip", "rsport", "requesttime", "responsetime", "xfwdfor", "xfwdforport", "statuscode"]
+    #keys=["time","clientip", "clientport", "vsip", "vsport", "dstrtt1", "dstrtt2", "rttmin","ua", "persist", "querymethod", "queryurl", "rsip", "rsport", "requesttime", "responsetime", "xfwdfor", "xfwdforport", "statuscode"]
     #for last_line in file:
     #    pass
 
@@ -113,7 +113,8 @@ def main():
                 clientport=m.group(7)
                 vsip= m.group(4)
                 vsport=m.group(5)
-                newsession={key: "" for key in keys}
+                #newsession={key: "" for key in keys}
+                newsession={}
                 newsession["time"]=logtime
                 newsession["clientip"]=clientip
                 newsession["clientport"]=clientport
@@ -131,11 +132,11 @@ def main():
                 newsession["requesttime"] = 0
                 newsession["responsetime"] = 0
                 newsession["xfwdfor"] = "255.255.255.255"
-                newsession["xfwdforport"] = "none"
+                newsession["xfwdforport"] = 0
                 newsession["statuscode"] = 0
                 newsession["sslcipher"] = "unknown"
                 newsession["sslsni"] = "unknown"
-
+                newsession["tlsversion"] = "unknown"
                 dict[connid]=newsession
 
             elif re.match(rttconnregex, line):
@@ -171,7 +172,6 @@ def main():
                     lineconnid = n.group(2)
                     if lineconnid in dict.keys():
                         dict[lineconnid]["tlsversion"] = n.group(3)
-
             elif re.match(queryregex, line):
                     n = re.match(queryregex, line)
                     print("Match queryregex")
@@ -216,7 +216,7 @@ def main():
                     print("Match statuscode non ssl")
                     lineconnid = n.group(2)
                     if lineconnid in dict.keys():
-                        dict[lineconnid]["statuscodenonssl"] = n.group(3)
+                        dict[lineconnid]["statuscode"] = n.group(3)
             elif re.match(closeregex,line):
                 o = re.match(closeregex,line)
                 if o:
@@ -224,9 +224,37 @@ def main():
                     lineconnid = o.group(2)
                     if lineconnid in dict.keys():
                         print ("Completed Object",dict[lineconnid])
-                        fields = [dict[lineconnid]["time"], "l7", custid, lmid, dict[lineconnid]["clientip"], dict[lineconnid]["clientport"], dict[lineconnid]["vsip"], dict[lineconnid]["vsport"], str(dict[lineconnid]["dstrtt1"]), str(dict[lineconnid]["dstrtt2"]), str(dict[lineconnid]["rttmin"]),
-                                  dict[lineconnid]["ua"], dict[lineconnid]["persist"], dict[lineconnid]["queryurl"], dict[lineconnid]["querymethod"], dict[lineconnid]["rsip"], dict[lineconnid]["rsport"]
-                                  , str(dict[lineconnid]["requesttime"]), str(dict[lineconnid]["responsetime"]), dict[lineconnid]["xfwdfor"], dict[lineconnid]["xfwdforport"], str(dict[lineconnid]["statuscode"])]
+                        fields = [dict[lineconnid]["time"],
+                                  "l7",
+                                  custid,
+                                  lmid,
+                                  dict[lineconnid]["clientip"],
+                                  dict[lineconnid]["clientport"],
+                                  dict[lineconnid]["vsip"],
+                                  dict[lineconnid]["vsport"],
+                                  str(dict[lineconnid]["dstrtt1"]),
+                                  str(dict[lineconnid]["dstrtt2"]),
+                                  str(dict[lineconnid]["rttmin"]),
+                                  dict[lineconnid]["ua"],
+                                  dict[lineconnid]["persist"],
+                                  dict[lineconnid]["queryurl"],
+                                  dict[lineconnid]["querymethod"],
+                                  dict[lineconnid]["rsip"],
+                                  dict[lineconnid]["rsport"],
+                                  str(dict[lineconnid]["requesttime"]),
+                                  str(dict[lineconnid]["responsetime"]),
+                                  dict[lineconnid]["xfwdfor"],
+                                  str(dict[lineconnid]["xfwdforport"]),
+                                  str(dict[lineconnid]["statuscode"]),
+                                  dict[lineconnid]["sslcipher"],
+                                  dict[lineconnid]["sslsni"],
+                                  dict[lineconnid]["tlsversion"]
+                                  ]
+
+                        print("FIELDS")
+                        print(fields)
+                        print("DICT")
+                        print(dict[lineconnid])
                         out = open(outfile, "a")
                         out.write(','.join(fields))
                         out.write("\n")
