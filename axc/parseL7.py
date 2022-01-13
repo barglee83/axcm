@@ -78,8 +78,8 @@ def main():
     ##SHOULD APPEND G3
 
 
-    statuscodessl = "(.*) [a-zA-Z0-9_.-]* kernel: L7: ([a-zA-Z0-9_.-]{16}): ok_to_compress (.*)"
-    statuscodenonssl = "(.*) [a-zA-Z0-9_.-]* kernel: L7: ([a-zA-Z0-9_.-]{16}): mangle_response [0-9]* \(Response (.*)\)"
+    statuscodessl = "(.*) [a-zA-Z0-9_.-]* kernel: L7: ([a-zA-Z0-9_.-]{16}): ok_to_compress ([0-9]+)"
+    statuscodenonssl = "(.*) [a-zA-Z0-9_.-]* kernel: L7: ([a-zA-Z0-9_.-]{16}): mangle_response [0-9]* \(Response ([0-9]+)\)"
     #(.*) [a-zA-Z0-9_.-]* kernel: L7: ([a-zA-Z0-9_.-]{16}): mangle_response [0-9]* \(Response (.*)\)
 
     # For HTTP - Jan 13 07:01:28 1002LM60NewHostname kernel: L7: ffff888074367ca8: mangle_response 187 (Response 404)
@@ -215,13 +215,15 @@ def main():
                     print("Match statuscode ssl")
                     lineconnid = n.group(2)
                     if lineconnid in dict.keys():
-                        dict[lineconnid]["statuscode"] = n.group(3)
+                        if dict[lineconnid]["statuscode"] == 0:
+                            dict[lineconnid]["statuscode"] = n.group(3)
             elif re.match(statuscodenonssl, line):
                     n = re.match(statuscodenonssl, line)
                     print("Match statuscode non ssl")
                     lineconnid = n.group(2)
                     if lineconnid in dict.keys():
-                        dict[lineconnid]["statuscode"] = n.group(3)
+                        if dict[lineconnid]["statuscode"] == 0:
+                            dict[lineconnid]["statuscode"] = n.group(3)
             elif re.match(closeregex,line):
                 o = re.match(closeregex,line)
                 if o:
