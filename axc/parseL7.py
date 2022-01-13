@@ -29,16 +29,34 @@ def main():
 
     file = open(infile,"r")
     newconnregex="(.*) [a-zA-Z0-9_.-]* kernel: L7: ([a-zA-Z0-9_.-]{16}): (SSL accept on|Accept on) (.*?..*?..*?..*?):(\w{1,5}) from (.*?..*?..*?..*?):(\w{1,5})?(.*)"
+    ## Requirement - Global Extended L7 Debug enabled. VS Extended Debug set to any level
     rttconnregex="(.*) [a-zA-Z0-9_.-]* kernel: L7: ([a-zA-Z0-9_.-]{16}): Conn: dest RTT ([0-9]*)\/([0-9]*) us min ([0-9]*) us"
+    ## Requirement - Global Extended L7 Debug enabled. VS Extended Debug set to any level
+
     closeregex="(.*) [a-zA-Z0-9_.-]* kernel: L7: ([a-zA-Z0-9_.-]{16}): conn release 7"
-    sslregex="(.*) [a-zA-Z0-9_.-]* kernel: L7: ([a-zA-Z0-9_.-]{16}): got sni '(.*)' cipher '(.*)'"
+    ## Requirement - Global Extended L7 Debug enabled. VS Extended Debug set to any level
+
+    sslcipherregex="(.*) [a-zA-Z0-9_.-]* kernel: L7: ([a-zA-Z0-9_.-]{16}): got sni '(.*)' cipher '(.*)'"
+    ## Requirement - Global Extended L7 Debug enabled. VS Extended Debug set to any level
+    ## Requirement - Add Received Cipher Name Set on VS
     # Group 3SNI Name Group 4 Cipher
 
+
+    tlsversionregex="(.*) [a-zA-Z0-9_.-]* kernel: L7: ([a-zA-Z0-9_.-]{16}): ## X-SSL-Protocol: (.*)"
+    ## Requirement - Global Extended L7 Debug enabled. VS Extended Debug set to Full Debg + Headers
+
+
+
     useragentregex="(.*) [a-zA-Z0-9_.-]* kernel: L7: ([a-zA-Z0-9_.-]{16}): User-Agent: (.*)"
+    ## Requirement - Global Extended L7 Debug enabled. VS Extended Debug set to any level
+    ## Requirement - Global Extended L7 Debug enabled. VS Extended Debug set to Full Debug
+
     # Group 3 UA
 
     persistregex="(.*) [a-zA-Z0-9_.-]* kernel: L7: ([a-zA-Z0-9_.-]{16}): find persist returns (.*)"
     #GROUP 3 Persist Token
+    ## Requirement - Global Extended L7 Debug enabled. VS Extended Debug set to any level
+    ## Requirement - Global Extended L7 Debug enabled. VS Extended Debug set to Full Debug
 
     queryregex="(.*) [a-zA-Z0-9_.-]* kernel: L7: ([a-zA-Z0-9_.-]{16}): request: (.*) (.*)"
     #G3 Request method G4 URL
@@ -51,6 +69,7 @@ def main():
     #G3 Req G4 Res
     xfwdfor = "(.*) [a-zA-Z0-9_.-]* kernel: L7: ([a-zA-Z0-9_.-]{16}): ## X-Forwarded-For: (.*)"
     # G3 XFWDHEADER
+    ## Requirement - Global Extended L7 Debug enabled. VS Extended Debug set to Full Debg + Headers
 
     xfwdforport = "(.*) [a-zA-Z0-9_.-]* kernel: L7: ([a-zA-Z0-9_.-]{16}): ## X-Forwarded-For-Port: (.*)"
     # G3 XFWDPORTHEADER
@@ -58,11 +77,24 @@ def main():
     fullheaderblob = "(.*) [a-zA-Z0-9_.-]* kernel: L7: ([a-zA-Z0-9_.-]{16}): ## (.*)"
     ##SHOULD APPEND G3
 
-    statuscode = "(.*) [a-zA-Z0-9_.-]* kernel: L7: ([a-zA-Z0-9_.-]{16}): ok_to_compress (.*)"
+
+    statuscodessl = "(.*) [a-zA-Z0-9_.-]* kernel: L7: ([a-zA-Z0-9_.-]{16}): ok_to_compress (.*)"
+    statuscodenonssl = "(.*) [a-zA-Z0-9_.-]* kernel: L7: ([a-zA-Z0-9_.-]{16}): mangle_response [0-9]* \(Response (.*)\)"
+    #(.*) [a-zA-Z0-9_.-]* kernel: L7: ([a-zA-Z0-9_.-]{16}): mangle_response [0-9]* \(Response (.*)\)
+
+    # For HTTP - Jan 13 07:01:28 1002LM60NewHostname kernel: L7: ffff888074367ca8: mangle_response 187 (Response 404)
+    ##SHOULD APPEND G3
+    ## XROOT login - echo 25 > /proc/sys/net/l7/debug_level
+    ## Need to ensure Some Response Processing being done e.g. Response Body Modification Rule Applied on VS
+
     dict={}
     keys=["time","clientip", "clientport", "vsip", "vsport", "dstrtt1", "dstrtt2", "rttmin","ua", "persist", "querymethod", "queryurl", "rsip", "rsport", "requesttime", "responsetime", "xfwdfor", "xfwdforport", "statuscode"]
     #for last_line in file:
     #    pass
+
+
+
+
 
     while 1:
         where = file.tell()
@@ -101,6 +133,8 @@ def main():
                 newsession["xfwdfor"] = "255.255.255.255"
                 newsession["xfwdforport"] = "none"
                 newsession["statuscode"] = 0
+                newsession["sslcipher"] = "unknown"
+                newsession["sslsni"] = "unknown"
 
                 dict[connid]=newsession
 
@@ -124,6 +158,20 @@ def main():
                     lineconnid = n.group(2)
                     if lineconnid in dict.keys():
                         dict[lineconnid]["persist"] = n.group(3)
+            elif re.match(sslcipherregex, line):
+                    n = re.match(sslcipherregex, line)
+                    print("Match sslcipherregex")
+                    lineconnid = n.group(2)
+                    if lineconnid in dict.keys():
+                        dict[lineconnid]["sslcipher"] = n.group(4)
+                        dict[lineconnid]["sslsni"] = n.group(3)
+            elif re.match(tlsversionregex, line):
+                    n = re.match(tlsversionregex, line)
+                    print("Match tlsversionregex")
+                    lineconnid = n.group(2)
+                    if lineconnid in dict.keys():
+                        dict[lineconnid]["tlsversion"] = n.group(3)
+
             elif re.match(queryregex, line):
                     n = re.match(queryregex, line)
                     print("Match queryregex")
@@ -157,12 +205,18 @@ def main():
                     lineconnid = n.group(2)
                     if lineconnid in dict.keys():
                         dict[lineconnid]["xfwdforport"] = n.group(3)
-            elif re.match(statuscode, line):
-                    n = re.match(statuscode, line)
-                    print("Match statuscode")
+            elif re.match(statuscodessl, line):
+                    n = re.match(statuscodessl, line)
+                    print("Match statuscode ssl")
                     lineconnid = n.group(2)
                     if lineconnid in dict.keys():
                         dict[lineconnid]["statuscode"] = n.group(3)
+            elif re.match(statuscodenonssl, line):
+                    n = re.match(statuscodenonssl, line)
+                    print("Match statuscode non ssl")
+                    lineconnid = n.group(2)
+                    if lineconnid in dict.keys():
+                        dict[lineconnid]["statuscodenonssl"] = n.group(3)
             elif re.match(closeregex,line):
                 o = re.match(closeregex,line)
                 if o:
