@@ -128,7 +128,7 @@ def main():
                 newsession["dstrtt1"]=0
                 newsession["dstrtt2"]=0
                 newsession["rttmin"]=0
-                newsession["ua"] = "none"
+                newsession["ua"] = "\"none\""
                 newsession["persist"] = "none"
                 newsession["querymethod"] = "unknown"
                 newsession["queryurl"] = "unknown"
