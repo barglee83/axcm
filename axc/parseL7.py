@@ -131,7 +131,7 @@ def main():
                 newsession["ua"] = "\"none\""
                 newsession["persist"] = "none"
                 newsession["querymethod"] = "unknown"
-                newsession["queryurl"] = "unknown"
+                newsession["queryurl"] = "/"
                 newsession["rsip"] = "0.0.0.0"
                 newsession["rsport"] = "0"
                 newsession["requesttime"] = 0
