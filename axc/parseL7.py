@@ -110,7 +110,7 @@ def main():
                 logtime = m.group(1)
                 connid = m.group(2)
                 ssl =0
-                print(m.group(3))
+                #print(m.group(3))
                 if ("SSL" in m.group(3)):
                     ssl=1
                 clientip= m.group(6)
@@ -146,7 +146,7 @@ def main():
 
             elif re.match(rttconnregex, line):
                 n=re.match(rttconnregex, line)
-                print("Match RTT")
+                #print("Match RTT")
                 lineconnid = n.group(2)
                 if lineconnid in dict.keys():
                     dict[lineconnid]["dstrtt1"] = n.group(3)
@@ -230,7 +230,7 @@ def main():
                     #print("Match Close")
                     lineconnid = o.group(2)
                     if lineconnid in dict.keys():
-                        print ("Completed Object",dict[lineconnid])
+                        #print ("Completed Object",dict[lineconnid])
                         fields = [dict[lineconnid]["time"],
                                   "l7",
                                   custid,
