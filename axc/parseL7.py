@@ -154,72 +154,72 @@ def main():
                     dict[lineconnid]["rttmin"] = n.group(5)
             elif re.match(useragentregex, line):
                 n=re.match(useragentregex, line)
-                print("Match UA")
+                #print("Match UA")
                 lineconnid = n.group(2)
                 if lineconnid in dict.keys():
                     dict[lineconnid]["ua"] = "\""+n.group(3)+"\""
             elif re.match(persistregex, line):
                     n = re.match(persistregex, line)
-                    print("Match Persist")
+                    #print("Match Persist")
                     lineconnid = n.group(2)
                     if lineconnid in dict.keys():
                         dict[lineconnid]["persist"] = n.group(3)
             elif re.match(sslcipherregex, line):
                     n = re.match(sslcipherregex, line)
-                    print("Match sslcipherregex")
+                    #print("Match sslcipherregex")
                     lineconnid = n.group(2)
                     if lineconnid in dict.keys():
                         dict[lineconnid]["sslcipher"] = n.group(4)
                         dict[lineconnid]["sslsni"] = n.group(3)
             elif re.match(tlsversionregex, line):
                     n = re.match(tlsversionregex, line)
-                    print("Match tlsversionregex")
+                    #print("Match tlsversionregex")
                     lineconnid = n.group(2)
                     if lineconnid in dict.keys():
                         dict[lineconnid]["tlsversion"] = n.group(3)
             elif re.match(queryregex, line):
                     n = re.match(queryregex, line)
-                    print("Match queryregex")
+                    #print("Match queryregex")
                     lineconnid = n.group(2)
                     if lineconnid in dict.keys():
                         dict[lineconnid]["querymethod"] = n.group(3)
                         dict[lineconnid]["queryurl"] = n.group(4)
             elif re.match(rsregex, line):
                     n = re.match(rsregex, line)
-                    print("Match rsregex")
+                    #print("Match rsregex")
                     lineconnid = n.group(2)
                     if lineconnid in dict.keys():
                         dict[lineconnid]["rsip"] = n.group(5)
                         dict[lineconnid]["rsport"] = n.group(6)
             elif re.match(conreqresregex, line):
                     n = re.match(conreqresregex, line)
-                    print("Match conreqresregex")
+                    #print("Match conreqresregex")
                     lineconnid = n.group(2)
                     if lineconnid in dict.keys():
                         dict[lineconnid]["requesttime"] = n.group(3)
                         dict[lineconnid]["responsetime"] = n.group(4)
             elif re.match(xfwdfor, line):
                     n = re.match(xfwdfor, line)
-                    print("Match xfwdfor")
+                    #print("Match xfwdfor")
                     lineconnid = n.group(2)
                     if lineconnid in dict.keys():
                         dict[lineconnid]["xfwdfor"] = n.group(3)
             elif re.match(xfwdforport, line):
                     n = re.match(xfwdforport, line)
-                    print("Match xfwdforport")
+                    #print("Match xfwdforport")
                     lineconnid = n.group(2)
                     if lineconnid in dict.keys():
                         dict[lineconnid]["xfwdforport"] = n.group(3)
             elif re.match(statuscodessl, line):
                     n = re.match(statuscodessl, line)
-                    print("Match statuscode ssl")
+                    #print("Match statuscode ssl")
                     lineconnid = n.group(2)
                     if lineconnid in dict.keys():
                         if dict[lineconnid]["statuscode"] == 0:
                             dict[lineconnid]["statuscode"] = n.group(3)
             elif re.match(statuscodenonssl, line):
                     n = re.match(statuscodenonssl, line)
-                    print("Match statuscode non ssl")
+                    #print("Match statuscode non ssl")
                     lineconnid = n.group(2)
                     if lineconnid in dict.keys():
                         if dict[lineconnid]["statuscode"] == 0:
@@ -227,7 +227,7 @@ def main():
             elif re.match(closeregex,line):
                 o = re.match(closeregex,line)
                 if o:
-                    print("Match Close")
+                    #print("Match Close")
                     lineconnid = o.group(2)
                     if lineconnid in dict.keys():
                         print ("Completed Object",dict[lineconnid])
@@ -259,10 +259,10 @@ def main():
                                   dict[lineconnid]["tlsversion"]
                                   ]
 
-                        print("FIELDS")
-                        print(fields)
-                        print("DICT")
-                        print(dict[lineconnid])
+                        #print("FIELDS")
+                        #print(fields)
+                        #print("DICT")
+                        #print(dict[lineconnid])
                         out = open(outfile, "a")
                         out.write(','.join(fields))
                         out.write("\n")
