@@ -1,5 +1,5 @@
 #!/bin/sh
-. /usr/local/bin/axcm/axc/axenv.sh
+. /usr/local/bin/axenv.sh
 now=$(date +"%T")
 echo "$now Insight Boot" >>/var/log/insight.log
 echo "$now CustID $AXFCUSTID" >>/var/log/insight.log
