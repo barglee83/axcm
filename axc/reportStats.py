@@ -54,6 +54,7 @@ def main():
     lm['name']="HA1"                # Assuming since single just use HA1
     lm['ip'] = lmip                 # Assuming since single this will match Ip provided
     lm['mode'] = "single"           #Derived from API Call
+    lm['model'] = "VLM5000"  # Derived from API Call
 
 
     # DATA CPU TOTAL USER/System/Idel/IOWaiting
@@ -163,6 +164,18 @@ def main():
     print(x.text)
 
 
+
+
+
+
+#
+# {Custid:1001 Name:CUSTLM Lmclusterid:1
+# Lm:[{Name:HA1 IP:10.0.0.9 Mode:single Cpu:{User:0 System:0 Idle:99 Iowait:0} Memory:{Memused:298740 Percentmemused:68 Memfree:134300 Percentmemfree:32}}] Vs:[{IP:10.0.0.9 Port:80 ID:1 Status:up Conns:14446 Activeconns:0 Connrate:0 Rs:[{Vsid:1 IP:10.0.0.5 Port:9081 ID:1 Activeconns:0 Connrate:0 Status:Up} {Vsid:1 IP:10.0.0.5 Port:9082 ID:2 Activeconns:0 Connrate:0 Status:Up}]} {IP:10.0.0.9 Port:443 ID:2 Status:up Conns:39 Activeconns:0 Connrate:0 Rs:[{Vsid:2 IP:10.0.0.5 Port:8081 ID:3 Activeconns:0 Connrate:0 Status:Up} {Vsid:2 IP:10.0.0.5 Port:8082 ID:4 Activeconns:0 Connrate:0 Status:Up}]}]}
+#
+#
+#
+#
+#
 
 
 

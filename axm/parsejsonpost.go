@@ -28,6 +28,8 @@ type LoadMaster struct {
 		Name string `json:"name"`
 		IP   string `json:"ip"`
 		Mode string `json:"mode"`
+		Model string `json:"model"`
+		#Firmware string `json:"firmware"`
 		Cpu  struct{
 		    User          int `json:"user"`
 		    System        int `json:"system"`
@@ -40,6 +42,11 @@ type LoadMaster struct {
 		    Memfree          int `json:"memfree"`
 		    Percentmemfree   int `json:"percentmemfree"`
 		} `json:"memory"`
+		#License  struct{
+		#    Substier        string `json:"substier"`
+		#    Subsexpiry      string `json:"subsexpiry"`
+		#    Subsexpirydays   int `json:"subsexpirydays"`
+		#} `json:"license"`
 	} `json:"lm"`
 	Vs []struct {
 		IP          string `json:"ip"`
