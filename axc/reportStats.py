@@ -54,7 +54,7 @@ def main():
     lm['name']="HA1"                # Assuming since single just use HA1
     lm['ip'] = lmip                 # Assuming since single this will match Ip provided
     lm['mode'] = "single"           #Derived from API Call
-    lm['model'] = "VLM5000"  # Derived from API Call
+    #lm['model'] = "VLM5000"  # Derived from API Call
 
 
     # DATA CPU TOTAL USER/System/Idel/IOWaiting
