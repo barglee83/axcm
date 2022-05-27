@@ -49,12 +49,13 @@ def main():
     lmcluster['custid']=int(custid)
     lmcluster['name']="LoadMaster"
     lmcluster['lmclusterid']=int(lmid)
+    lmcluster['mode'] = "single"           #Derived from API Call
+
 
     lm={}
     lm['name']="HA1"                # Assuming since single just use HA1
     lm['ip'] = lmip                 # Assuming since single this will match Ip provided
-    lm['mode'] = "single"           #Derived from API Call
-    #lm['model'] = "VLM5000"  # Derived from API Call
+    lm['model'] = "VLM5000"  # Derived from API Call
 
 
     # DATA CPU TOTAL USER/System/Idel/IOWaiting
@@ -91,7 +92,11 @@ def main():
         for x in currentRs:
             #print("RSID:",x['RsIndex'],"RS Status:",x['Status'],"VSID", i['Index'])
             rsStatusByID[x['RsIndex']]=x['Status']
-
+    url = "https://" + user + ":" + password + "@" + lmip + ":" + port + "/access/get?param=version"
+    print("reportStats.py -- LoadMaster Query", url)
+    response = requests.get(url, verify=False)
+    obj = xmltodict.parse(response.text)
+    lm['firmware']=obj['Response']['Success']['Data']['version']
 
     url = "https://" + user + ":" + password + "@" + lmip + ":" + port + "/access/stats"
     print("reportStats.py -- LoadMaster Query",url)
@@ -115,11 +120,7 @@ def main():
     lm['memory'] = memory
 
 
-    url = "https://" + user + ":" + password + "@" + lmip + ":" + port + "/access/get?param=version"
-    print("reportStats.py -- LoadMaster Query", url)
-    response = requests.get(url, verify=False)
-    obj = xmltodict.parse(response.text)
-    lm['firmware']=obj['Response']['Success']['Data']['version']
+
 
 
     lmcluster['lm'].append(lm)
