@@ -1,0 +1,1261 @@
+{
+ "meta": {
+  "version": "1",
+  "type": "dashboard",
+  "name": "LoadMaster-Template",
+  "description": "template created from dashboard: LoadMaster"
+ },
+ "content": {
+  "data": {
+   "type": "dashboard",
+   "attributes": {
+    "name": "LoadMaster",
+    "description": ""
+   },
+   "relationships": {
+    "label": {
+     "data": []
+    },
+    "cell": {
+     "data": [
+      {
+       "type": "cell",
+       "id": "088bd9ba3ee62000"
+      },
+      {
+       "type": "cell",
+       "id": "088bd9cbf1e62000"
+      },
+      {
+       "type": "cell",
+       "id": "096d08b9dc4a3000"
+      },
+      {
+       "type": "cell",
+       "id": "096d0990ee0a3000"
+      },
+      {
+       "type": "cell",
+       "id": "096d09c5c40a3000"
+      },
+      {
+       "type": "cell",
+       "id": "096d418d050a3000"
+      },
+      {
+       "type": "cell",
+       "id": "096d483df08a3000"
+      },
+      {
+       "type": "cell",
+       "id": "096d4c33630a3000"
+      },
+      {
+       "type": "cell",
+       "id": "096d4cb4e78a3000"
+      },
+      {
+       "type": "cell",
+       "id": "096d4cb7c98a3000"
+      },
+      {
+       "type": "cell",
+       "id": "096d4d32680a3000"
+      },
+      {
+       "type": "cell",
+       "id": "096d4d35290a3000"
+      },
+      {
+       "type": "cell",
+       "id": "096d4f1a53ca3000"
+      }
+     ]
+    },
+    "variable": {
+     "data": [
+      {
+       "type": "variable",
+       "id": "089281e5272b4000"
+      },
+      {
+       "type": "variable",
+       "id": "0892820729eb4000"
+      }
+     ]
+    }
+   }
+  },
+  "included": [
+   {
+    "id": "088bd9ba3ee62000",
+    "type": "cell",
+    "attributes": {
+     "x": 0,
+     "y": 11,
+     "w": 4,
+     "h": 4
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "088bd9ba3ee62000"
+      }
+     }
+    }
+   },
+   {
+    "id": "088bd9cbf1e62000",
+    "type": "cell",
+    "attributes": {
+     "x": 4,
+     "y": 11,
+     "w": 4,
+     "h": 4
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "088bd9cbf1e62000"
+      }
+     }
+    }
+   },
+   {
+    "id": "096d08b9dc4a3000",
+    "type": "cell",
+    "attributes": {
+     "x": 0,
+     "y": 3,
+     "w": 4,
+     "h": 4
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "096d08b9dc4a3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "096d0990ee0a3000",
+    "type": "cell",
+    "attributes": {
+     "x": 0,
+     "y": 7,
+     "w": 4,
+     "h": 1
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "096d0990ee0a3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "096d09c5c40a3000",
+    "type": "cell",
+    "attributes": {
+     "x": 4,
+     "y": 3,
+     "w": 4,
+     "h": 4
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "096d09c5c40a3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "096d418d050a3000",
+    "type": "cell",
+    "attributes": {
+     "x": 4,
+     "y": 7,
+     "w": 4,
+     "h": 1
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "096d418d050a3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "096d483df08a3000",
+    "type": "cell",
+    "attributes": {
+     "x": 0,
+     "y": 0,
+     "w": 11,
+     "h": 3
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "096d483df08a3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "096d4c33630a3000",
+    "type": "cell",
+    "attributes": {
+     "x": 4,
+     "y": 8,
+     "w": 4,
+     "h": 1
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "096d4c33630a3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "096d4cb4e78a3000",
+    "type": "cell",
+    "attributes": {
+     "x": 0,
+     "y": 8,
+     "w": 4,
+     "h": 1
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "096d4cb4e78a3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "096d4cb7c98a3000",
+    "type": "cell",
+    "attributes": {
+     "x": 4,
+     "y": 9,
+     "w": 4,
+     "h": 1
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "096d4cb7c98a3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "096d4d32680a3000",
+    "type": "cell",
+    "attributes": {
+     "x": 0,
+     "y": 9,
+     "w": 4,
+     "h": 1
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "096d4d32680a3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "096d4d35290a3000",
+    "type": "cell",
+    "attributes": {
+     "x": 0,
+     "y": 10,
+     "w": 4,
+     "h": 1
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "096d4d35290a3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "096d4f1a53ca3000",
+    "type": "cell",
+    "attributes": {
+     "x": 4,
+     "y": 10,
+     "w": 4,
+     "h": 1
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "096d4f1a53ca3000"
+      }
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "088bd9ba3ee62000",
+    "attributes": {
+     "name": "LoadMaster CPU",
+     "properties": {
+      "shape": "chronograf-v2",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"lmcpu\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> filter(fn: (r) => r[\"Name\"] == \"Xname\")\n  |> filter(fn: (r) => r[\"_field\"] == \"Idle\" or r[\"_field\"] == \"Iowait\" or r[\"_field\"] == \"System\" or r[\"_field\"] == \"User\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "axes": {
+       "x": {
+        "bounds": [
+         "",
+         ""
+        ],
+        "label": "",
+        "prefix": "",
+        "suffix": "",
+        "base": "10",
+        "scale": "linear"
+       },
+       "y": {
+        "bounds": [
+         "",
+         ""
+        ],
+        "label": "",
+        "prefix": "",
+        "suffix": "",
+        "base": "10",
+        "scale": "linear"
+       }
+      },
+      "type": "xy",
+      "legend": {},
+      "geom": "monotoneX",
+      "colors": [
+       {
+        "id": "39915b89-597f-40c3-ad0a-28b15e76982a",
+        "type": "scale",
+        "hex": "#FD7A5D",
+        "name": "Delorean",
+        "value": 0
+       },
+       {
+        "id": "768b1ab9-9724-4ea1-810d-592e21e4be82",
+        "type": "scale",
+        "hex": "#5F1CF2",
+        "name": "Delorean",
+        "value": 0
+       },
+       {
+        "id": "868d5529-b760-4b1a-a748-42da8cb5d09e",
+        "type": "scale",
+        "hex": "#4CE09A",
+        "name": "Delorean",
+        "value": 0
+       }
+      ],
+      "note": "",
+      "showNoteWhenEmpty": false,
+      "xColumn": "_time",
+      "generateXAxisTicks": [],
+      "xTotalTicks": 0,
+      "xTickStart": 0,
+      "xTickStep": 0,
+      "yColumn": "_value",
+      "generateYAxisTicks": [],
+      "yTotalTicks": 0,
+      "yTickStart": 0,
+      "yTickStep": 0,
+      "shadeBelow": false,
+      "position": "overlaid",
+      "timeFormat": "",
+      "hoverDimension": "auto",
+      "legendColorizeRows": true,
+      "legendOpacity": 1,
+      "legendOrientationThreshold": 100000000
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "088bd9cbf1e62000",
+    "attributes": {
+     "name": "LoadMaster Memory Usage",
+     "properties": {
+      "shape": "chronograf-v2",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"lmmem\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> filter(fn: (r) => r[\"Name\"] == \"Xname\")\n  |> filter(fn: (r) => r[\"_field\"] == \"Free\" or r[\"_field\"] == \"Used\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "axes": {
+       "x": {
+        "bounds": [
+         "",
+         ""
+        ],
+        "label": "",
+        "prefix": "",
+        "suffix": "",
+        "base": "10",
+        "scale": "linear"
+       },
+       "y": {
+        "bounds": [
+         "",
+         ""
+        ],
+        "label": "",
+        "prefix": "",
+        "suffix": "",
+        "base": "10",
+        "scale": "linear"
+       }
+      },
+      "type": "xy",
+      "legend": {},
+      "geom": "line",
+      "colors": [
+       {
+        "id": "3f91ba51-8e59-4117-8a8e-af68dbc4e309",
+        "type": "scale",
+        "hex": "#31C0F6",
+        "name": "Nineteen Eighty Four",
+        "value": 0
+       },
+       {
+        "id": "0fbf5752-76bd-4c04-9a54-413201e686d6",
+        "type": "scale",
+        "hex": "#A500A5",
+        "name": "Nineteen Eighty Four",
+        "value": 0
+       },
+       {
+        "id": "98dd23e0-acdf-44dc-94ce-178a5b1a8a40",
+        "type": "scale",
+        "hex": "#FF7E27",
+        "name": "Nineteen Eighty Four",
+        "value": 0
+       }
+      ],
+      "note": "",
+      "showNoteWhenEmpty": false,
+      "xColumn": "_time",
+      "generateXAxisTicks": [],
+      "xTotalTicks": 0,
+      "xTickStart": 0,
+      "xTickStep": 0,
+      "yColumn": "_value",
+      "generateYAxisTicks": [],
+      "yTotalTicks": 0,
+      "yTickStart": 0,
+      "yTickStep": 0,
+      "shadeBelow": false,
+      "position": "overlaid",
+      "timeFormat": "",
+      "hoverDimension": "auto",
+      "legendColorizeRows": true,
+      "legendOpacity": 1,
+      "legendOrientationThreshold": 100000000
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "096d08b9dc4a3000",
+    "attributes": {
+     "name": "CPU Guage",
+     "properties": {
+      "shape": "chronograf-v2",
+      "type": "gauge",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"lmcpu\")\n  |> filter(fn: (r) => r[\"Custid\"] == \"1001\")\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == \"1\")\n  |> filter(fn: (r) => r[\"Name\"] == \"Xname\")\n  |> filter(fn: (r) => r[\"_field\"] == \"User\")\n  |> last()",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "prefix": "",
+      "tickPrefix": "",
+      "suffix": "%",
+      "tickSuffix": "",
+      "colors": [
+       {
+        "id": "0",
+        "type": "min",
+        "hex": "#00C9FF",
+        "name": "laser",
+        "value": 0
+       },
+       {
+        "id": "1",
+        "type": "max",
+        "hex": "#9394FF",
+        "name": "comet",
+        "value": 100
+       }
+      ],
+      "decimalPlaces": {
+       "isEnforced": true,
+       "digits": 2
+      },
+      "note": "",
+      "showNoteWhenEmpty": false
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "096d0990ee0a3000",
+    "attributes": {
+     "name": "Highest Today",
+     "properties": {
+      "shape": "chronograf-v2",
+      "type": "single-stat",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"lmcpu\")\n  |> filter(fn: (r) => r[\"Custid\"] == \"1001\")\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == \"1\")\n  |> filter(fn: (r) => r[\"Name\"] == \"Xname\")\n  |> filter(fn: (r) => r[\"_field\"] == \"Idle\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> map(fn: (r) => ({r with _value: 100.0 - r._value}))\n  |> yield(name: \"max\")",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "prefix": "",
+      "tickPrefix": "",
+      "suffix": "%",
+      "tickSuffix": "",
+      "colors": [
+       {
+        "id": "base",
+        "type": "text",
+        "hex": "#00C9FF",
+        "name": "laser",
+        "value": 0
+       }
+      ],
+      "decimalPlaces": {
+       "isEnforced": true,
+       "digits": 2
+      },
+      "note": "",
+      "showNoteWhenEmpty": false
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "096d09c5c40a3000",
+    "attributes": {
+     "name": "Memory Usage",
+     "properties": {
+      "shape": "chronograf-v2",
+      "type": "gauge",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"lmmem\")\n  |> filter(fn: (r) => r[\"Custid\"] == \"1001\")\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == \"1\")\n  |> filter(fn: (r) => r[\"Name\"] == \"Xname\")\n  |> filter(fn: (r) => r[\"_field\"] == \"Used\")\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\n  |> yield(name: \"last\")",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "prefix": "",
+      "tickPrefix": "",
+      "suffix": "%",
+      "tickSuffix": "",
+      "colors": [
+       {
+        "id": "0",
+        "type": "min",
+        "hex": "#00C9FF",
+        "name": "laser",
+        "value": 0
+       },
+       {
+        "id": "1",
+        "type": "max",
+        "hex": "#9394FF",
+        "name": "comet",
+        "value": 100
+       }
+      ],
+      "decimalPlaces": {
+       "isEnforced": true,
+       "digits": 2
+      },
+      "note": "",
+      "showNoteWhenEmpty": false
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "096d418d050a3000",
+    "attributes": {
+     "name": "Highest Mem use Today",
+     "properties": {
+      "shape": "chronograf-v2",
+      "type": "single-stat",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"lmmem\")\n  |> filter(fn: (r) => r[\"Custid\"] == \"1001\")\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == \"1\")\n  |> filter(fn: (r) => r[\"Name\"] == \"Xname\")\n  |> filter(fn: (r) => r[\"_field\"] == \"Used\")\n  |> aggregateWindow(every: v.windowPeriod, fn: min, createEmpty: false)\n  |> map(fn: (r) => ({r with _value: r._value}))\n  |> yield(name: \"max\")",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "prefix": "",
+      "tickPrefix": "",
+      "suffix": "%",
+      "tickSuffix": "",
+      "colors": [
+       {
+        "id": "base",
+        "type": "text",
+        "hex": "#00C9FF",
+        "name": "laser",
+        "value": 0
+       }
+      ],
+      "decimalPlaces": {
+       "isEnforced": true,
+       "digits": 2
+      },
+      "note": "",
+      "showNoteWhenEmpty": false
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "096d483df08a3000",
+    "attributes": {
+     "name": "Name this Cell",
+     "properties": {
+      "shape": "chronograf-v2",
+      "type": "table",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"lmcpu\")\n  |> filter(fn: (r) => r[\"Custid\"] == \"1001\")\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == \"1\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "colors": [
+       {
+        "id": "base",
+        "type": "text",
+        "hex": "#ffffff",
+        "name": "white",
+        "value": 0
+       }
+      ],
+      "tableOptions": {
+       "verticalTimeAxis": true,
+       "sortBy": {
+        "internalName": "",
+        "displayName": "",
+        "visible": false
+       },
+       "wrapping": "",
+       "fixFirstColumn": false
+      },
+      "fieldOptions": [
+       {
+        "internalName": "_start",
+        "displayName": "_start",
+        "visible": false
+       },
+       {
+        "internalName": "_stop",
+        "displayName": "_stop",
+        "visible": false
+       },
+       {
+        "internalName": "_time",
+        "displayName": "_time",
+        "visible": true
+       },
+       {
+        "internalName": "_value",
+        "displayName": "_value",
+        "visible": true
+       },
+       {
+        "internalName": "Custid",
+        "displayName": "Custid",
+        "visible": false
+       },
+       {
+        "internalName": "Lmclusterid",
+        "displayName": "Lmclusterid",
+        "visible": false
+       },
+       {
+        "internalName": "Name",
+        "displayName": "Name",
+        "visible": false
+       },
+       {
+        "internalName": "_field",
+        "displayName": "_field",
+        "visible": false
+       },
+       {
+        "internalName": "_measurement",
+        "displayName": "_measurement",
+        "visible": false
+       }
+      ],
+      "timeFormat": "YYYY-MM-DD HH:mm:ss",
+      "decimalPlaces": {
+       "isEnforced": false,
+       "digits": 2
+      },
+      "note": "",
+      "showNoteWhenEmpty": false
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "096d4c33630a3000",
+    "attributes": {
+     "name": "Memory in Use",
+     "properties": {
+      "shape": "chronograf-v2",
+      "type": "single-stat",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"lmmem\")\n  |> filter(fn: (r) => r[\"Custid\"] == \"1001\")\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == \"1\")\n  |> filter(fn: (r) => r[\"Name\"] == \"Xname\")\n  |> filter(fn: (r) => r[\"_field\"] == \"Memused\")\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\n  |> yield(name: \"last\")",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "prefix": "",
+      "tickPrefix": "",
+      "suffix": "KB",
+      "tickSuffix": "",
+      "colors": [
+       {
+        "id": "base",
+        "type": "text",
+        "hex": "#00C9FF",
+        "name": "laser",
+        "value": 0
+       }
+      ],
+      "decimalPlaces": {
+       "isEnforced": true,
+       "digits": 0
+      },
+      "note": "",
+      "showNoteWhenEmpty": false
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "096d4cb4e78a3000",
+    "attributes": {
+     "name": "CPU User",
+     "properties": {
+      "shape": "chronograf-v2",
+      "type": "single-stat",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"lmcpu\")\n  |> filter(fn: (r) => r[\"Custid\"] == \"1001\")\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == \"1\")\n  |> filter(fn: (r) => r[\"Name\"] == \"Xname\")\n  |> filter(fn: (r) => r[\"_field\"] == \"User\")\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\n  |> yield(name: \"last\")",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "prefix": "",
+      "tickPrefix": "",
+      "suffix": "%",
+      "tickSuffix": "",
+      "colors": [
+       {
+        "id": "base",
+        "type": "text",
+        "hex": "#00C9FF",
+        "name": "laser",
+        "value": 0
+       }
+      ],
+      "decimalPlaces": {
+       "isEnforced": true,
+       "digits": 0
+      },
+      "note": "",
+      "showNoteWhenEmpty": false
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "096d4cb7c98a3000",
+    "attributes": {
+     "name": "Memory Free",
+     "properties": {
+      "shape": "chronograf-v2",
+      "type": "single-stat",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"lmmem\")\n  |> filter(fn: (r) => r[\"Custid\"] == \"1001\")\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == \"1\")\n  |> filter(fn: (r) => r[\"Name\"] == \"Xname\")\n  |> filter(fn: (r) => r[\"_field\"] == \"Free\")\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\n  |> yield(name: \"last\")",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "prefix": "",
+      "tickPrefix": "",
+      "suffix": "KB",
+      "tickSuffix": "",
+      "colors": [
+       {
+        "id": "base",
+        "type": "text",
+        "hex": "#00C9FF",
+        "name": "laser",
+        "value": 0
+       }
+      ],
+      "decimalPlaces": {
+       "isEnforced": true,
+       "digits": 0
+      },
+      "note": "",
+      "showNoteWhenEmpty": false
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "096d4d32680a3000",
+    "attributes": {
+     "name": "CPU System",
+     "properties": {
+      "shape": "chronograf-v2",
+      "type": "single-stat",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"lmcpu\")\n  |> filter(fn: (r) => r[\"Custid\"] == \"1001\")\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == \"1\")\n  |> filter(fn: (r) => r[\"Name\"] == \"Xname\")\n  |> filter(fn: (r) => r[\"_field\"] == \"System\")\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\n  |> yield(name: \"last\")",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "prefix": "",
+      "tickPrefix": "",
+      "suffix": "%",
+      "tickSuffix": "",
+      "colors": [
+       {
+        "id": "base",
+        "type": "text",
+        "hex": "#00C9FF",
+        "name": "laser",
+        "value": 0
+       }
+      ],
+      "decimalPlaces": {
+       "isEnforced": true,
+       "digits": 0
+      },
+      "note": "",
+      "showNoteWhenEmpty": false
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "096d4d35290a3000",
+    "attributes": {
+     "name": "CPU IO Wait",
+     "properties": {
+      "shape": "chronograf-v2",
+      "type": "single-stat",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"lmcpu\")\n  |> filter(fn: (r) => r[\"Custid\"] == \"1001\")\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == \"1\")\n  |> filter(fn: (r) => r[\"Name\"] == \"Xname\")\n  |> filter(fn: (r) => r[\"_field\"] == \"Iowait\")\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\n  |> yield(name: \"last\")",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "prefix": "",
+      "tickPrefix": "",
+      "suffix": "%",
+      "tickSuffix": "",
+      "colors": [
+       {
+        "id": "base",
+        "type": "text",
+        "hex": "#00C9FF",
+        "name": "laser",
+        "value": 0
+       }
+      ],
+      "decimalPlaces": {
+       "isEnforced": true,
+       "digits": 0
+      },
+      "note": "",
+      "showNoteWhenEmpty": false
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "096d4f1a53ca3000",
+    "attributes": {
+     "name": "Memory (Total)",
+     "properties": {
+      "shape": "chronograf-v2",
+      "type": "single-stat",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"lmmem\")\n  |> filter(fn: (r) => r[\"Custid\"] == \"1001\")\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == \"1\")\n  |> filter(fn: (r) => r[\"Name\"] == \"Xname\")\n  |> filter(fn: (r) => r[\"_field\"] == \"Free\" or r[\"_field\"] == \"Memused\")\n //group by time to isolate the values you want to sum togehter\n  |> group(columns: [\"_time\"], mode:\"by\")\n  |> sum(column: \"_value\")\n//to ungroup your data provide a group without any columns\n  |> group()\n  |> yield(name: \"total\")",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "prefix": "",
+      "tickPrefix": "",
+      "suffix": "KB",
+      "tickSuffix": "",
+      "colors": [
+       {
+        "id": "base",
+        "type": "text",
+        "hex": "#00C9FF",
+        "name": "laser",
+        "value": 0
+       }
+      ],
+      "decimalPlaces": {
+       "isEnforced": true,
+       "digits": 0
+      },
+      "note": "",
+      "showNoteWhenEmpty": false
+     }
+    }
+   },
+   {
+    "id": "089281e5272b4000",
+    "type": "variable",
+    "attributes": {
+     "name": "CustID",
+     "arguments": {
+      "type": "query",
+      "values": {
+       "query": "import \"influxdata/influxdb/schema\"\nschema.tagValues(bucket: \"axf\", tag: \"Custid\")",
+       "language": "flux"
+      }
+     },
+     "selected": null
+    },
+    "relationships": {
+     "label": {
+      "data": []
+     }
+    }
+   },
+   {
+    "id": "0892820729eb4000",
+    "type": "variable",
+    "attributes": {
+     "name": "LoadMasterClusterID",
+     "arguments": {
+      "type": "query",
+      "values": {
+       "query": "import \"influxdata/influxdb/schema\"\nschema.tagValues(bucket: \"axf\", tag: \"Lmclusterid\")",
+       "language": "flux"
+      }
+     },
+     "selected": null
+    },
+    "relationships": {
+     "label": {
+      "data": []
+     }
+    }
+   }
+  ]
+ },
+ "labels": []
+}
