@@ -42,11 +42,11 @@ type LoadMaster struct {
 		    Memfree          int `json:"memfree"`
 		    Percentmemfree   int `json:"percentmemfree"`
 		} `json:"memory"`
-		//License  struct{
-	    //    Substier        string `json:"substier"`
-		//    Subsexpiry      string `json:"subsexpiry"`
-		//    Subsexpirydays   int `json:"subsexpirydays"`
-		//} `json:"license"`
+		License  struct{
+	        Substier        string `json:"substier"`
+		    Subsexpiry      string `json:"subsexpiry"`
+		    Subsexpirydays   int `json:"subsexpirydays"`
+		} `json:"license"`
 	} `json:"lm"`
 	Vs []struct {
 		IP          string `json:"ip"`
