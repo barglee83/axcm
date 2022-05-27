@@ -70,6 +70,18 @@ def main():
     obj = xmltodict.parse(response.text)
     lmcluster['name']=obj['Response']['Success']['Data']['hostname']
 
+
+
+    #/access/get?param=version
+
+
+    url = "https://" + user + ":" + password + "@" + lmip + ":" + port + "/access/get?param=version"
+    print("reportStats.py -- LoadMaster Query", url)
+    response = requests.get(url, verify=False)
+    obj = xmltodict.parse(response.text)
+    lmcluster['firmware']=obj['Response']['Success']['Data']['version']
+
+
     #--TEMP
     rsStatusByID={}
     url = "https://" + user + ":" + password + "@" + lmip + ":" + port + "/access/listvs"
