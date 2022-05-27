@@ -29,7 +29,7 @@ type LoadMaster struct {
 		IP   string `json:"ip"`
 		Mode string `json:"mode"`
 		Model string `json:"model"`
-		//Firmware string `json:"firmware"`
+		Firmware string `json:"firmware"`
 		Cpu  struct{
 		    User          int `json:"user"`
 		    System        int `json:"system"`
