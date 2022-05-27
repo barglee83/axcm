@@ -99,11 +99,11 @@ func writeToInflux(lmc LoadMaster) {
   for _, lm := range lmc.Lm {
     fmt.Println(fmt.Sprintf("lmcpu,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname User="+strconv.Itoa(lm.Cpu.User)+",System="+strconv.Itoa(lm.Cpu.System)+",Idle="+strconv.Itoa(lm.Cpu.Idle)+",Iowait="+strconv.Itoa(lm.Cpu.Iowait)))
     fmt.Println(fmt.Sprintf("lmmem,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Used="+strconv.Itoa(lm.Memory.Percentmemused)+",Free="+strconv.Itoa(lm.Memory.Memfree)+",Memused="+strconv.Itoa(lm.Memory.Memused)))
-    fmt.Println(fmt.Sprintf("lmfw,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Firmware="+strconv.Itoa(lm.Firmware)))
+    fmt.Println(fmt.Sprintf("lmfw,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Firmware="+lm.Firmware))
 
     writeAPI.WriteRecord(fmt.Sprintf("lmcpu,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname User="+strconv.Itoa(lm.Cpu.User)+",System="+strconv.Itoa(lm.Cpu.System)+",Idle="+strconv.Itoa(lm.Cpu.Idle)+",Iowait="+strconv.Itoa(lm.Cpu.Iowait)))
     writeAPI.WriteRecord(fmt.Sprintf("lmmem,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Used="+strconv.Itoa(lm.Memory.Percentmemused)+",Free="+strconv.Itoa(lm.Memory.Memfree)+",Memused="+strconv.Itoa(lm.Memory.Memused)))
-    writeAPI.WriteRecord(fmt.Sprintf("lmfw,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Firmware="+strconv.Itoa(lm.Firmware)))
+    writeAPI.WriteRecord(fmt.Sprintf("lmfw,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Firmware="+lm.Firmware))
 
 
     // example Print lmcpu,Custid=1001,Lmclusterid=1,Name=Xname User=1,System=1,Idle=99,Iowait=0
