@@ -95,7 +95,8 @@ func writeToInflux(lmc LoadMaster) {
   writeAPI := client.WriteAPI(org, bucket)
   fmt.Println(fmt.Sprintf("lmmode,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Mode=\""+lmc.Mode+"\""))
   writeAPI.WriteRecord(fmt.Sprintf("lmmode,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Mode=\""+lmc.Mode+"\""))
-
+  fmt.Println(fmt.Sprintf("lmame,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Lmname=\""+lmc.Name+"\""))
+  writeAPI.WriteRecord(fmt.Sprintf("lmname,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Lmname=\""+lmc.Name+"\""))
 
   // write line protocol
   // For each LM
