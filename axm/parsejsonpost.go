@@ -93,6 +93,7 @@ func writeToInflux(lmc LoadMaster) {
 
   // get non-blocking write client
   writeAPI := client.WriteAPI(org, bucket)
+  fmt.Println(fmt.Sprintf("lmmode,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Mode=\""+lm.Mode+"\""))
   writeAPI.WriteRecord(fmt.Sprintf("lmmode,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Mode=\""+lm.Mode+"\""))
 
 
