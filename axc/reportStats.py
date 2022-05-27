@@ -75,11 +75,7 @@ def main():
     #/access/get?param=version
 
 
-    url = "https://" + user + ":" + password + "@" + lmip + ":" + port + "/access/get?param=version"
-    print("reportStats.py -- LoadMaster Query", url)
-    response = requests.get(url, verify=False)
-    obj = xmltodict.parse(response.text)
-    lmcluster['firmware']=obj['Response']['Success']['Data']['version']
+
 
 
     #--TEMP
@@ -117,6 +113,15 @@ def main():
 
     lm['cpu'] = cpu
     lm['memory'] = memory
+
+
+    url = "https://" + user + ":" + password + "@" + lmip + ":" + port + "/access/get?param=version"
+    print("reportStats.py -- LoadMaster Query", url)
+    response = requests.get(url, verify=False)
+    obj = xmltodict.parse(response.text)
+    lm['firmware']=obj['Response']['Success']['Data']['version']
+
+
     lmcluster['lm'].append(lm)
 
     vslist=[]
