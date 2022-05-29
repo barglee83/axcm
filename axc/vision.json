@@ -1,0 +1,88 @@
+{
+  "Customer": {
+    "name": "Camp Technologies"
+    "users": [
+      {
+        "name": "John",
+        "emailaddr": "john@camptech.com",
+        "sms": "+35387888888",
+        "officehours": {
+            "starttime": "0900",
+            "endtime": "1700",
+            "startday": "monday",
+            "endday": "friday"
+        }
+      },
+      {
+        "name": "Tom",
+        "emailaddr": "tom@camptech.com",
+        "sms": "1234567",
+        "officehours": {
+            "starttime": "0900",
+            "endtime": "1700",
+            "startday": "monday",
+            "endday": "friday"
+        }
+      },
+      {
+        "name": "George",
+        "emailaddr": "george@camptech.com",
+        "sms": "1234567",
+        "officehours": {
+            "starttime": "0900",
+            "endtime": "1700",
+            "startday": "monday",
+            "endday": "friday"
+        }
+      }
+    ],
+
+    "mainteancePeriods": {
+        "windows": [
+          {
+          "start": "2022-02-25T15:00:00.000-0500",
+          "end": "2022-02-25T15:00:00.000-0500"
+          }
+        ]
+    }
+  }
+  "Event": {
+    "issueid": "1234",
+    "cluster": "HA1",
+    "object": "HA1.LM1",
+    "objecttype": LoadMasterCluster,
+    "kmod": "163",
+    "severity": "critical",
+    "eventtype": "Trigger",
+    "time": "2022-02-25T15:00:00.000-0500"
+  }
+}
+
+
+
+
+Example Rules:
+
+If event occurs send to John if:
+        day of week between officehours startday - end day
+        time of day between office hours start - end
+        time not during mainteance window
+        objecttype = application
+        object = exchange
+                => Send Email
+
+        day of week outside officehours startday - end day
+        time not during mainteance window
+        objecttype = application
+        object = exchange
+        severity = critical
+                => Send SMS
+
+
+MON-FRI 09:00-17:00 (excluding pre configured maintenance windows)
+John wants to get email for any Issues related to the specific Application Object Exchange
+
+MON-FRI Other times (excluding pre configured maintenance windows)
+John wants to get SMS for Critical Severity Issues on the Exchange app
+Weekends:
+John wants to get email and SMS for Critical Severity Issues on the Exchange app
