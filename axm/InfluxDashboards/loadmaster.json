@@ -85,6 +85,30 @@
       {
        "type": "cell",
        "id": "096d78bd058a3000"
+      },
+      {
+       "type": "cell",
+       "id": "097084f72b8a3000"
+      },
+      {
+       "type": "cell",
+       "id": "097085ea674a3000"
+      },
+      {
+       "type": "cell",
+       "id": "0970862c4c8a3000"
+      },
+      {
+       "type": "cell",
+       "id": "0970863531ca3000"
+      },
+      {
+       "type": "cell",
+       "id": "097086bd734a3000"
+      },
+      {
+       "type": "cell",
+       "id": "0970874ad78a3000"
       }
      ]
     },
@@ -108,7 +132,7 @@
     "type": "cell",
     "attributes": {
      "x": 0,
-     "y": 11,
+     "y": 12,
      "w": 5,
      "h": 4
     },
@@ -126,7 +150,7 @@
     "type": "cell",
     "attributes": {
      "x": 5,
-     "y": 11,
+     "y": 12,
      "w": 5,
      "h": 4
     },
@@ -144,7 +168,7 @@
     "type": "cell",
     "attributes": {
      "x": 0,
-     "y": 3,
+     "y": 4,
      "w": 5,
      "h": 4
     },
@@ -162,7 +186,7 @@
     "type": "cell",
     "attributes": {
      "x": 0,
-     "y": 7,
+     "y": 8,
      "w": 5,
      "h": 1
     },
@@ -180,7 +204,7 @@
     "type": "cell",
     "attributes": {
      "x": 5,
-     "y": 3,
+     "y": 4,
      "w": 5,
      "h": 4
     },
@@ -198,7 +222,7 @@
     "type": "cell",
     "attributes": {
      "x": 5,
-     "y": 7,
+     "y": 8,
      "w": 5,
      "h": 1
     },
@@ -216,7 +240,7 @@
     "type": "cell",
     "attributes": {
      "x": 5,
-     "y": 8,
+     "y": 9,
      "w": 5,
      "h": 1
     },
@@ -234,7 +258,7 @@
     "type": "cell",
     "attributes": {
      "x": 0,
-     "y": 8,
+     "y": 9,
      "w": 5,
      "h": 1
     },
@@ -252,7 +276,7 @@
     "type": "cell",
     "attributes": {
      "x": 5,
-     "y": 9,
+     "y": 10,
      "w": 5,
      "h": 1
     },
@@ -270,7 +294,7 @@
     "type": "cell",
     "attributes": {
      "x": 0,
-     "y": 9,
+     "y": 10,
      "w": 5,
      "h": 1
     },
@@ -288,7 +312,7 @@
     "type": "cell",
     "attributes": {
      "x": 0,
-     "y": 10,
+     "y": 11,
      "w": 5,
      "h": 1
     },
@@ -306,7 +330,7 @@
     "type": "cell",
     "attributes": {
      "x": 5,
-     "y": 10,
+     "y": 11,
      "w": 5,
      "h": 1
     },
@@ -405,6 +429,114 @@
       "data": {
        "type": "view",
        "id": "096d78bd058a3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "097084f72b8a3000",
+    "type": "cell",
+    "attributes": {
+     "x": 0,
+     "y": 3,
+     "w": 3,
+     "h": 1
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "097084f72b8a3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "097085ea674a3000",
+    "type": "cell",
+    "attributes": {
+     "x": 3,
+     "y": 3,
+     "w": 2,
+     "h": 1
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "097085ea674a3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "0970862c4c8a3000",
+    "type": "cell",
+    "attributes": {
+     "x": 5,
+     "y": 3,
+     "w": 3,
+     "h": 1
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "0970862c4c8a3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "0970863531ca3000",
+    "type": "cell",
+    "attributes": {
+     "x": 8,
+     "y": 3,
+     "w": 2,
+     "h": 1
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "0970863531ca3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "097086bd734a3000",
+    "type": "cell",
+    "attributes": {
+     "x": 0,
+     "y": 16,
+     "w": 10,
+     "h": 2
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "097086bd734a3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "0970874ad78a3000",
+    "type": "cell",
+    "attributes": {
+     "x": 0,
+     "y": 18,
+     "w": 10,
+     "h": 2
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "0970874ad78a3000"
       }
      }
     }
@@ -629,7 +761,7 @@
       "type": "gauge",
       "queries": [
        {
-        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"lmcpu\")\n  |> filter(fn: (r) => r[\"Custid\"] == \"1001\")\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == \"1\")\n  |> filter(fn: (r) => r[\"Name\"] == \"Xname\")\n  |> filter(fn: (r) => r[\"_field\"] == \"User\")\n  |> last()",
+        "text": "from(bucket: \"axf\")\n  |> range(start: -5m, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"lmcpu\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> filter(fn: (r) => r[\"Name\"] == \"Xname\")\n  |> filter(fn: (r) => r[\"_field\"] == \"User\")\n  |> last()",
         "editMode": "advanced",
         "name": "",
         "builderConfig": {
@@ -1470,6 +1602,440 @@
       },
       "note": "",
       "showNoteWhenEmpty": false
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "097084f72b8a3000",
+    "attributes": {
+     "name": "LoadMaster Connection Rate",
+     "properties": {
+      "shape": "chronograf-v2",
+      "type": "single-stat",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"totalconns\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> filter(fn: (r) => r[\"Name\"] == \"Xname\")\n  |> filter(fn: (r) => r[\"_field\"] == \"lmtotalconns\")\n  |> derivative(unit: 1s, nonNegative: true)\n  |> last()\n",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "prefix": "",
+      "tickPrefix": "",
+      "suffix": " Connections/sec",
+      "tickSuffix": "",
+      "colors": [
+       {
+        "id": "base",
+        "type": "text",
+        "hex": "#00C9FF",
+        "name": "laser",
+        "value": 0
+       }
+      ],
+      "decimalPlaces": {
+       "isEnforced": true,
+       "digits": 0
+      },
+      "note": "",
+      "showNoteWhenEmpty": false
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "097085ea674a3000",
+    "attributes": {
+     "name": "LoadMaster Bytes Transfer Rate",
+     "properties": {
+      "shape": "chronograf-v2",
+      "type": "single-stat",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"totalbytes\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> filter(fn: (r) => r[\"Name\"] == \"Xname\")\n  |> filter(fn: (r) => r[\"_field\"] == \"lmtotalbytes\")\n  |> derivative(unit: 1s, nonNegative: true)\n  |> last()\n",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "prefix": "",
+      "tickPrefix": "",
+      "suffix": " Bytes/sec",
+      "tickSuffix": "",
+      "colors": [
+       {
+        "id": "base",
+        "type": "text",
+        "hex": "#00C9FF",
+        "name": "laser",
+        "value": 0
+       }
+      ],
+      "decimalPlaces": {
+       "isEnforced": true,
+       "digits": 0
+      },
+      "note": "",
+      "showNoteWhenEmpty": false
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "0970862c4c8a3000",
+    "attributes": {
+     "name": "LoadMaster Transfer Rate",
+     "properties": {
+      "shape": "chronograf-v2",
+      "type": "single-stat",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"totalbits\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> filter(fn: (r) => r[\"Name\"] == \"Xname\")\n  |> filter(fn: (r) => r[\"_field\"] == \"lmtotalbits\")\n  |> derivative(unit: 1s, nonNegative: true)\n  |> last()\n",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "prefix": "",
+      "tickPrefix": "",
+      "suffix": " Bits/sec",
+      "tickSuffix": "",
+      "colors": [
+       {
+        "id": "base",
+        "type": "text",
+        "hex": "#00C9FF",
+        "name": "laser",
+        "value": 0
+       }
+      ],
+      "decimalPlaces": {
+       "isEnforced": true,
+       "digits": 0
+      },
+      "note": "",
+      "showNoteWhenEmpty": false
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "0970863531ca3000",
+    "attributes": {
+     "name": "LoadMaster Bytes Transfer Rate (Clone) (Clone)",
+     "properties": {
+      "shape": "chronograf-v2",
+      "type": "single-stat",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"totalpackets\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> filter(fn: (r) => r[\"Name\"] == \"Xname\")\n  |> filter(fn: (r) => r[\"_field\"] == \"lmtotalpackets\")\n  |> derivative(unit: 1s, nonNegative: true)\n  |> last()\n",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "prefix": "",
+      "tickPrefix": "",
+      "suffix": " Packets/sec",
+      "tickSuffix": "",
+      "colors": [
+       {
+        "id": "base",
+        "type": "text",
+        "hex": "#00C9FF",
+        "name": "laser",
+        "value": 0
+       }
+      ],
+      "decimalPlaces": {
+       "isEnforced": true,
+       "digits": 0
+      },
+      "note": "",
+      "showNoteWhenEmpty": false
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "097086bd734a3000",
+    "attributes": {
+     "name": "LoadMaster Connection Rate",
+     "properties": {
+      "shape": "chronograf-v2",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"totalconns\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> filter(fn: (r) => r[\"Name\"] == \"Xname\")\n  |> filter(fn: (r) => r[\"_field\"] == \"lmtotalconns\")\n  |> derivative(unit: 1s, nonNegative: true)\n",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "axes": {
+       "x": {
+        "bounds": [
+         "",
+         ""
+        ],
+        "label": "",
+        "prefix": "",
+        "suffix": "",
+        "base": "10",
+        "scale": "linear"
+       },
+       "y": {
+        "bounds": [
+         "",
+         ""
+        ],
+        "label": "",
+        "prefix": "",
+        "suffix": "",
+        "base": "10",
+        "scale": "linear"
+       }
+      },
+      "type": "xy",
+      "legend": {},
+      "geom": "line",
+      "colors": [
+       {
+        "id": "083e4c03-7aa5-4f19-8ee4-790b8ba014b2",
+        "type": "scale",
+        "hex": "#31C0F6",
+        "name": "Nineteen Eighty Four",
+        "value": 0
+       },
+       {
+        "id": "e97adfa9-6876-470d-83a5-4ca0d4e4596d",
+        "type": "scale",
+        "hex": "#A500A5",
+        "name": "Nineteen Eighty Four",
+        "value": 0
+       },
+       {
+        "id": "a587d2b9-d5d3-4bd9-8295-e68d6e627c9a",
+        "type": "scale",
+        "hex": "#FF7E27",
+        "name": "Nineteen Eighty Four",
+        "value": 0
+       }
+      ],
+      "note": "",
+      "showNoteWhenEmpty": false,
+      "xColumn": "_time",
+      "generateXAxisTicks": [],
+      "xTotalTicks": 0,
+      "xTickStart": 0,
+      "xTickStep": 0,
+      "yColumn": "_value",
+      "generateYAxisTicks": [],
+      "yTotalTicks": 0,
+      "yTickStart": 0,
+      "yTickStep": 0,
+      "shadeBelow": false,
+      "position": "overlaid",
+      "timeFormat": "",
+      "hoverDimension": "auto",
+      "legendColorizeRows": true,
+      "legendOpacity": 1,
+      "legendOrientationThreshold": 100000000
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "0970874ad78a3000",
+    "attributes": {
+     "name": "Connections By VS",
+     "properties": {
+      "shape": "chronograf-v2",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"VsConns\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> derivative(unit: 1s, nonNegative: true)\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "axes": {
+       "x": {
+        "bounds": [
+         "",
+         ""
+        ],
+        "label": "",
+        "prefix": "",
+        "suffix": "",
+        "base": "10",
+        "scale": "linear"
+       },
+       "y": {
+        "bounds": [
+         "",
+         ""
+        ],
+        "label": "",
+        "prefix": "",
+        "suffix": "",
+        "base": "10",
+        "scale": "linear"
+       }
+      },
+      "type": "xy",
+      "legend": {},
+      "geom": "line",
+      "colors": [
+       {
+        "id": "083e4c03-7aa5-4f19-8ee4-790b8ba014b2",
+        "type": "scale",
+        "hex": "#31C0F6",
+        "name": "Nineteen Eighty Four",
+        "value": 0
+       },
+       {
+        "id": "e97adfa9-6876-470d-83a5-4ca0d4e4596d",
+        "type": "scale",
+        "hex": "#A500A5",
+        "name": "Nineteen Eighty Four",
+        "value": 0
+       },
+       {
+        "id": "a587d2b9-d5d3-4bd9-8295-e68d6e627c9a",
+        "type": "scale",
+        "hex": "#FF7E27",
+        "name": "Nineteen Eighty Four",
+        "value": 0
+       }
+      ],
+      "note": "",
+      "showNoteWhenEmpty": false,
+      "xColumn": "_time",
+      "generateXAxisTicks": [],
+      "xTotalTicks": 0,
+      "xTickStart": 0,
+      "xTickStep": 0,
+      "yColumn": "_value",
+      "generateYAxisTicks": [],
+      "yTotalTicks": 0,
+      "yTickStart": 0,
+      "yTickStep": 0,
+      "shadeBelow": true,
+      "position": "stacked",
+      "timeFormat": "",
+      "hoverDimension": "auto",
+      "legendColorizeRows": true,
+      "legendOpacity": 1,
+      "legendOrientationThreshold": 100000000
      }
     }
    },

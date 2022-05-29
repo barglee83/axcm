@@ -48,10 +48,6 @@
       },
       {
        "type": "cell",
-       "id": "096fbe2ed7ca3000"
-      },
-      {
-       "type": "cell",
        "id": "096fbe72288a3000"
       },
       {
@@ -73,6 +69,46 @@
       {
        "type": "cell",
        "id": "096fcd45608a3000"
+      },
+      {
+       "type": "cell",
+       "id": "096ff576b68a3000"
+      },
+      {
+       "type": "cell",
+       "id": "096ff70101ca3000"
+      },
+      {
+       "type": "cell",
+       "id": "096ff77dd08a3000"
+      },
+      {
+       "type": "cell",
+       "id": "09706af92b8a3000"
+      },
+      {
+       "type": "cell",
+       "id": "09706ba8bb0a3000"
+      },
+      {
+       "type": "cell",
+       "id": "09706d4c8a4a3000"
+      },
+      {
+       "type": "cell",
+       "id": "09707740374a3000"
+      },
+      {
+       "type": "cell",
+       "id": "09708a5b5b0a3000"
+      },
+      {
+       "type": "cell",
+       "id": "09708a92c64a3000"
+      },
+      {
+       "type": "cell",
+       "id": "09708af0538a3000"
       }
      ]
     },
@@ -100,7 +136,7 @@
     "type": "cell",
     "attributes": {
      "x": 0,
-     "y": 26,
+     "y": 43,
      "w": 7,
      "h": 4
     },
@@ -118,7 +154,7 @@
     "type": "cell",
     "attributes": {
      "x": 0,
-     "y": 18,
+     "y": 31,
      "w": 7,
      "h": 4
     },
@@ -136,7 +172,7 @@
     "type": "cell",
     "attributes": {
      "x": 0,
-     "y": 22,
+     "y": 39,
      "w": 7,
      "h": 4
     },
@@ -154,7 +190,7 @@
     "type": "cell",
     "attributes": {
      "x": 0,
-     "y": 2,
+     "y": 1,
      "w": 4,
      "h": 1
     },
@@ -172,8 +208,8 @@
     "type": "cell",
     "attributes": {
      "x": 0,
-     "y": 4,
-     "w": 7,
+     "y": 5,
+     "w": 9,
      "h": 4
     },
     "relationships": {
@@ -190,8 +226,8 @@
     "type": "cell",
     "attributes": {
      "x": 0,
-     "y": 8,
-     "w": 7,
+     "y": 13,
+     "w": 9,
      "h": 4
     },
     "relationships": {
@@ -208,7 +244,7 @@
     "type": "cell",
     "attributes": {
      "x": 0,
-     "y": 16,
+     "y": 29,
      "w": 7,
      "h": 2
     },
@@ -222,30 +258,12 @@
     }
    },
    {
-    "id": "096fbe2ed7ca3000",
-    "type": "cell",
-    "attributes": {
-     "x": 0,
-     "y": 0,
-     "w": 7,
-     "h": 1
-    },
-    "relationships": {
-     "view": {
-      "data": {
-       "type": "view",
-       "id": "096fbe2ed7ca3000"
-      }
-     }
-    }
-   },
-   {
     "id": "096fbe72288a3000",
     "type": "cell",
     "attributes": {
      "x": 0,
-     "y": 3,
-     "w": 7,
+     "y": 4,
+     "w": 9,
      "h": 1
     },
     "relationships": {
@@ -262,8 +280,8 @@
     "type": "cell",
     "attributes": {
      "x": 0,
-     "y": 1,
-     "w": 4,
+     "y": 0,
+     "w": 9,
      "h": 1
     },
     "relationships": {
@@ -279,10 +297,10 @@
     "id": "096fc45dc38a3000",
     "type": "cell",
     "attributes": {
-     "x": 4,
+     "x": 0,
      "y": 2,
      "w": 2,
-     "h": 1
+     "h": 2
     },
     "relationships": {
      "view": {
@@ -299,7 +317,7 @@
     "attributes": {
      "x": 4,
      "y": 1,
-     "w": 3,
+     "w": 5,
      "h": 1
     },
     "relationships": {
@@ -315,10 +333,10 @@
     "id": "096fc585bd0a3000",
     "type": "cell",
     "attributes": {
-     "x": 6,
+     "x": 2,
      "y": 2,
      "w": 1,
-     "h": 1
+     "h": 2
     },
     "relationships": {
      "view": {
@@ -334,8 +352,8 @@
     "type": "cell",
     "attributes": {
      "x": 0,
-     "y": 12,
-     "w": 7,
+     "y": 21,
+     "w": 9,
      "h": 4
     },
     "relationships": {
@@ -343,6 +361,186 @@
       "data": {
        "type": "view",
        "id": "096fcd45608a3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "096ff576b68a3000",
+    "type": "cell",
+    "attributes": {
+     "x": 0,
+     "y": 25,
+     "w": 9,
+     "h": 4
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "096ff576b68a3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "096ff70101ca3000",
+    "type": "cell",
+    "attributes": {
+     "x": 3,
+     "y": 2,
+     "w": 2,
+     "h": 1
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "096ff70101ca3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "096ff77dd08a3000",
+    "type": "cell",
+    "attributes": {
+     "x": 7,
+     "y": 2,
+     "w": 2,
+     "h": 1
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "096ff77dd08a3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "09706af92b8a3000",
+    "type": "cell",
+    "attributes": {
+     "x": 5,
+     "y": 2,
+     "w": 2,
+     "h": 1
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "09706af92b8a3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "09706ba8bb0a3000",
+    "type": "cell",
+    "attributes": {
+     "x": 0,
+     "y": 35,
+     "w": 7,
+     "h": 4
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "09706ba8bb0a3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "09706d4c8a4a3000",
+    "type": "cell",
+    "attributes": {
+     "x": 0,
+     "y": 9,
+     "w": 9,
+     "h": 4
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "09706d4c8a4a3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "09707740374a3000",
+    "type": "cell",
+    "attributes": {
+     "x": 0,
+     "y": 17,
+     "w": 9,
+     "h": 4
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "09707740374a3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "09708a5b5b0a3000",
+    "type": "cell",
+    "attributes": {
+     "x": 7,
+     "y": 3,
+     "w": 2,
+     "h": 1
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "09708a5b5b0a3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "09708a92c64a3000",
+    "type": "cell",
+    "attributes": {
+     "x": 3,
+     "y": 3,
+     "w": 2,
+     "h": 1
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "09708a92c64a3000"
+      }
+     }
+    }
+   },
+   {
+    "id": "09708af0538a3000",
+    "type": "cell",
+    "attributes": {
+     "x": 5,
+     "y": 3,
+     "w": 2,
+     "h": 1
+    },
+    "relationships": {
+     "view": {
+      "data": {
+       "type": "view",
+       "id": "09708af0538a3000"
       }
      }
     }
@@ -406,7 +604,7 @@
       },
       "type": "xy",
       "legend": {},
-      "geom": "line",
+      "geom": "monotoneX",
       "colors": [
        {
         "id": "c7ad568a-4349-4395-8134-c648393a984b",
@@ -442,8 +640,8 @@
       "yTotalTicks": 0,
       "yTickStart": 0,
       "yTickStep": 0,
-      "shadeBelow": false,
-      "position": "overlaid",
+      "shadeBelow": true,
+      "position": "stacked",
       "timeFormat": "",
       "hoverDimension": "auto",
       "legendColorizeRows": true,
@@ -728,7 +926,7 @@
       "type": "mosaic",
       "queries": [
        {
-        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"VsStatus\")\n  |> filter(fn: (r) => r[\"Custid\"] == \"1001\")\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == \"1\")\n  |> filter(fn: (r) => r[\"VSID\"] == \"1\")\n  |> filter(fn: (r) => r[\"_field\"] == \"Status\")\n",
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"VsStatus\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> filter(fn: (r) => r[\"VSID\"] == v.VirtualServiceID)\n  |> filter(fn: (r) => r[\"_field\"] == \"Status\")\n",
         "editMode": "advanced",
         "name": "",
         "builderConfig": {
@@ -792,7 +990,7 @@
       "shape": "chronograf-v2",
       "queries": [
        {
-        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"vsconns\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> filter(fn: (r) => r[\"VSID\"] == v.VirtualServiceID)\n  |> derivative(unit: 1s, nonNegative: true)\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"VsConns\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> filter(fn: (r) => r[\"VSID\"] == v.VirtualServiceID)\n  |> derivative(unit: 1s, nonNegative: true)\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
         "editMode": "advanced",
         "name": "",
         "builderConfig": {
@@ -842,7 +1040,7 @@
       },
       "type": "xy",
       "legend": {},
-      "geom": "line",
+      "geom": "monotoneX",
       "colors": [
        {
         "id": "d00ea8cc-a81b-4cbd-b5fa-5be4f9c0598c",
@@ -902,18 +1100,6 @@
    },
    {
     "type": "view",
-    "id": "096fbe2ed7ca3000",
-    "attributes": {
-     "name": "Name this Cell",
-     "properties": {
-      "shape": "chronograf-v2",
-      "type": "markdown",
-      "note": "# Current"
-     }
-    }
-   },
-   {
-    "type": "view",
     "id": "096fbe72288a3000",
     "attributes": {
      "name": "Name this Cell",
@@ -934,7 +1120,7 @@
       "type": "single-stat",
       "queries": [
        {
-        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Vsname\")\n  |> filter(fn: (r) => r[\"Custid\"] == \"1001\")\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == \"1\")\n  |> filter(fn: (r) => r[\"VSID\"] == v.VirtualServiceID)\n  |> filter(fn: (r) => r[\"_field\"] == \"Nickname\")\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\n  |> yield(name: \"last\")",
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Vsname\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> filter(fn: (r) => r[\"VSID\"] == v.VirtualServiceID)\n  |> filter(fn: (r) => r[\"_field\"] == \"Nickname\")\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\n  |> yield(name: \"last\")",
         "editMode": "advanced",
         "name": "",
         "builderConfig": {
@@ -990,7 +1176,7 @@
       "type": "single-stat",
       "queries": [
        {
-        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Vsname\" or r[\"_measurement\"] == \"VsIp\")\n  |> filter(fn: (r) => r[\"Custid\"] == \"1001\")\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == \"1\")\n  |> filter(fn: (r) => r[\"VSID\"] == \"2\")\n  |> filter(fn: (r) => r[\"_field\"] == \"Ip\")\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\n  |> yield(name: \"last\")",
+        "text": "from(bucket: \"axf\")\n  |> range(start: -5m, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"VsIp\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> filter(fn: (r) => r[\"VSID\"] == v.VirtualServiceID)\n  |> filter(fn: (r) => r[\"_field\"] == \"Ip\")\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\n  |> yield(name: \"last\")",
         "editMode": "advanced",
         "name": "",
         "builderConfig": {
@@ -1102,7 +1288,7 @@
       "type": "single-stat",
       "queries": [
        {
-        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Vsname\" or r[\"_measurement\"] == \"VsPort\")\n  |> filter(fn: (r) => r[\"Custid\"] == \"1001\")\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == \"1\")\n  |> filter(fn: (r) => r[\"VSID\"] == \"2\")\n  |> filter(fn: (r) => r[\"_field\"] == \"Port\")\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\n  |> yield(name: \"last\")",
+        "text": "from(bucket: \"axf\")\n  |> range(start: -15m, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"VsPort\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> filter(fn: (r) => r[\"VSID\"] == v.VirtualServiceID)\n  |> filter(fn: (r) => r[\"_field\"] == \"Port\")\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\n  |> yield(name: \"last\")",
         "editMode": "advanced",
         "name": "",
         "builderConfig": {
@@ -1250,6 +1436,722 @@
       "legendColorizeRows": true,
       "legendOpacity": 1,
       "legendOrientationThreshold": 100000000
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "096ff576b68a3000",
+    "attributes": {
+     "name": "Bytes per second",
+     "properties": {
+      "shape": "chronograf-v2",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"VsBytes\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> filter(fn: (r) => r[\"VSID\"] == v.VirtualServiceID)\n  |> derivative(unit: 1s, nonNegative: true)\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")\n",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "axes": {
+       "x": {
+        "bounds": [
+         "",
+         ""
+        ],
+        "label": "",
+        "prefix": "",
+        "suffix": "",
+        "base": "10",
+        "scale": "linear"
+       },
+       "y": {
+        "bounds": [
+         "",
+         ""
+        ],
+        "label": "",
+        "prefix": "",
+        "suffix": "",
+        "base": "10",
+        "scale": "linear"
+       }
+      },
+      "type": "xy",
+      "legend": {},
+      "geom": "line",
+      "colors": [
+       {
+        "id": "d00ea8cc-a81b-4cbd-b5fa-5be4f9c0598c",
+        "type": "scale",
+        "hex": "#31C0F6",
+        "name": "Nineteen Eighty Four",
+        "value": 0
+       },
+       {
+        "id": "98d7786c-04a5-4c64-8220-33e85c08304c",
+        "type": "scale",
+        "hex": "#A500A5",
+        "name": "Nineteen Eighty Four",
+        "value": 0
+       },
+       {
+        "id": "46417945-887b-4863-837e-a9fd6372cea7",
+        "type": "scale",
+        "hex": "#FF7E27",
+        "name": "Nineteen Eighty Four",
+        "value": 0
+       }
+      ],
+      "note": "",
+      "showNoteWhenEmpty": false,
+      "xColumn": "_time",
+      "generateXAxisTicks": [],
+      "xTotalTicks": 0,
+      "xTickStart": 0,
+      "xTickStep": 0,
+      "yColumn": "_value",
+      "generateYAxisTicks": [],
+      "yTotalTicks": 0,
+      "yTickStart": 0,
+      "yTickStep": 0,
+      "shadeBelow": false,
+      "position": "overlaid",
+      "timeFormat": "",
+      "hoverDimension": "auto",
+      "legendColorizeRows": true,
+      "legendOpacity": 1,
+      "legendOrientationThreshold": 100000000
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "096ff70101ca3000",
+    "attributes": {
+     "name": "Current Connections/second",
+     "properties": {
+      "shape": "chronograf-v2",
+      "type": "single-stat",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: -15m, stop: now())\n  |> filter(fn: (r) => r[\"_measurement\"] == \"VsConns\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> filter(fn: (r) => r[\"VSID\"] == v.VirtualServiceID)\n  |> derivative(unit: 1s, nonNegative: true)\n  |> last()",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "prefix": "",
+      "tickPrefix": "",
+      "suffix": "",
+      "tickSuffix": "",
+      "colors": [
+       {
+        "id": "base",
+        "type": "text",
+        "hex": "#00C9FF",
+        "name": "laser",
+        "value": 0
+       }
+      ],
+      "decimalPlaces": {
+       "isEnforced": true,
+       "digits": 0
+      },
+      "note": "",
+      "showNoteWhenEmpty": false
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "096ff77dd08a3000",
+    "attributes": {
+     "name": "Current Packets per second",
+     "properties": {
+      "shape": "chronograf-v2",
+      "type": "single-stat",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: -15m, stop: now())\n  |> filter(fn: (r) => r[\"_measurement\"] == \"VsPackets\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> filter(fn: (r) => r[\"VSID\"] == v.VirtualServiceID)\n  |> derivative(unit: 1s, nonNegative: true)\n  |> last()\n",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "prefix": "",
+      "tickPrefix": "",
+      "suffix": "",
+      "tickSuffix": "",
+      "colors": [
+       {
+        "id": "base",
+        "type": "text",
+        "hex": "#00C9FF",
+        "name": "laser",
+        "value": 0
+       }
+      ],
+      "decimalPlaces": {
+       "isEnforced": true,
+       "digits": 0
+      },
+      "note": "",
+      "showNoteWhenEmpty": false
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "09706af92b8a3000",
+    "attributes": {
+     "name": "Current Bytes per second",
+     "properties": {
+      "shape": "chronograf-v2",
+      "type": "single-stat",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: -15m, stop: now())\n  |> filter(fn: (r) => r[\"_measurement\"] == \"VsBytes\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> filter(fn: (r) => r[\"VSID\"] == v.VirtualServiceID)\n  |> derivative(unit: 1s, nonNegative: true)\n  |> last()\n",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "prefix": "",
+      "tickPrefix": "",
+      "suffix": "",
+      "tickSuffix": "",
+      "colors": [
+       {
+        "id": "base",
+        "type": "text",
+        "hex": "#00C9FF",
+        "name": "laser",
+        "value": 0
+       }
+      ],
+      "decimalPlaces": {
+       "isEnforced": true,
+       "digits": 0
+      },
+      "note": "",
+      "showNoteWhenEmpty": false
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "09706ba8bb0a3000",
+    "attributes": {
+     "name": "RS Active Connections ",
+     "properties": {
+      "shape": "chronograf-v2",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"RsActiveconns\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> filter(fn: (r) => r[\"VSID\"] == v.VirtualServiceID)\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "axes": {
+       "x": {
+        "bounds": [
+         "",
+         ""
+        ],
+        "label": "",
+        "prefix": "",
+        "suffix": "",
+        "base": "10",
+        "scale": "linear"
+       },
+       "y": {
+        "bounds": [
+         "",
+         ""
+        ],
+        "label": "",
+        "prefix": "",
+        "suffix": "",
+        "base": "10",
+        "scale": "linear"
+       }
+      },
+      "type": "xy",
+      "legend": {},
+      "geom": "monotoneX",
+      "colors": [
+       {
+        "id": "d2148e84-0b8b-439e-977e-e75fa285b608",
+        "type": "scale",
+        "hex": "#31C0F6",
+        "name": "Nineteen Eighty Four",
+        "value": 0
+       },
+       {
+        "id": "05ecbbf6-896b-4841-8bbe-a2079d95f1dc",
+        "type": "scale",
+        "hex": "#A500A5",
+        "name": "Nineteen Eighty Four",
+        "value": 0
+       },
+       {
+        "id": "5b590385-6ea6-41c2-9e5a-5a94a724009d",
+        "type": "scale",
+        "hex": "#FF7E27",
+        "name": "Nineteen Eighty Four",
+        "value": 0
+       }
+      ],
+      "note": "",
+      "showNoteWhenEmpty": false,
+      "xColumn": "_time",
+      "generateXAxisTicks": [],
+      "xTotalTicks": 0,
+      "xTickStart": 0,
+      "xTickStep": 0,
+      "yColumn": "_value",
+      "generateYAxisTicks": [],
+      "yTotalTicks": 0,
+      "yTickStart": 0,
+      "yTickStep": 0,
+      "shadeBelow": true,
+      "position": "stacked",
+      "timeFormat": "",
+      "hoverDimension": "auto",
+      "legendColorizeRows": true,
+      "legendOpacity": 1,
+      "legendOrientationThreshold": 100000000
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "09706d4c8a4a3000",
+    "attributes": {
+     "name": "RS Status over Time (Clone)",
+     "properties": {
+      "shape": "chronograf-v2",
+      "type": "mosaic",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"RsStatus\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> filter(fn: (r) => r[\"VSID\"] == v.VirtualServiceID)\n\n",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "colors": [
+       "#31C0F6",
+       "#BC00B8",
+       "#FF7E27"
+      ],
+      "fillColumns": [
+       "_value"
+      ],
+      "xColumn": "_time",
+      "generateXAxisTicks": [],
+      "xTotalTicks": 0,
+      "xTickStart": 0,
+      "xTickStep": 0,
+      "ySeriesColumns": [
+       "Custid"
+      ],
+      "xAxisLabel": "",
+      "yAxisLabel": "",
+      "xPrefix": "",
+      "xSuffix": "",
+      "yPrefix": "",
+      "ySuffix": "",
+      "note": "",
+      "showNoteWhenEmpty": false,
+      "timeFormat": "",
+      "legendColorizeRows": true,
+      "legendOpacity": 1,
+      "legendOrientationThreshold": 100000000
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "09707740374a3000",
+    "attributes": {
+     "name": "RS Connections Per Second ",
+     "properties": {
+      "shape": "chronograf-v2",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"RsConns\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> filter(fn: (r) => r[\"VSID\"] == v.VirtualServiceID)\n  |> filter(fn: (r) => (exists r[\"RSID\"] ) == true )\n  |> derivative(unit: 1s, nonNegative: true)\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "axes": {
+       "x": {
+        "bounds": [
+         "",
+         ""
+        ],
+        "label": "",
+        "prefix": "",
+        "suffix": "",
+        "base": "10",
+        "scale": "linear"
+       },
+       "y": {
+        "bounds": [
+         "",
+         ""
+        ],
+        "label": "",
+        "prefix": "",
+        "suffix": "",
+        "base": "10",
+        "scale": "linear"
+       }
+      },
+      "type": "xy",
+      "legend": {},
+      "geom": "monotoneX",
+      "colors": [
+       {
+        "id": "083e4c03-7aa5-4f19-8ee4-790b8ba014b2",
+        "type": "scale",
+        "hex": "#31C0F6",
+        "name": "Nineteen Eighty Four",
+        "value": 0
+       },
+       {
+        "id": "e97adfa9-6876-470d-83a5-4ca0d4e4596d",
+        "type": "scale",
+        "hex": "#A500A5",
+        "name": "Nineteen Eighty Four",
+        "value": 0
+       },
+       {
+        "id": "a587d2b9-d5d3-4bd9-8295-e68d6e627c9a",
+        "type": "scale",
+        "hex": "#FF7E27",
+        "name": "Nineteen Eighty Four",
+        "value": 0
+       }
+      ],
+      "note": "",
+      "showNoteWhenEmpty": false,
+      "xColumn": "_time",
+      "generateXAxisTicks": [],
+      "xTotalTicks": 0,
+      "xTickStart": 0,
+      "xTickStep": 0,
+      "yColumn": "_value",
+      "generateYAxisTicks": [],
+      "yTotalTicks": 0,
+      "yTickStart": 0,
+      "yTickStep": 0,
+      "shadeBelow": true,
+      "position": "stacked",
+      "timeFormat": "",
+      "hoverDimension": "auto",
+      "legendColorizeRows": true,
+      "legendOpacity": 1,
+      "legendOrientationThreshold": 100000000
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "09708a5b5b0a3000",
+    "attributes": {
+     "name": "Highest Packets per second Today ",
+     "properties": {
+      "shape": "chronograf-v2",
+      "type": "single-stat",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: today(), stop: now())\n  |> filter(fn: (r) => r[\"_measurement\"] == \"VsPackets\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> filter(fn: (r) => r[\"VSID\"] == v.VirtualServiceID)\n  |> derivative(unit: 1s, nonNegative: true)\n  |> max()\n",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "prefix": "",
+      "tickPrefix": "",
+      "suffix": "",
+      "tickSuffix": "",
+      "colors": [
+       {
+        "id": "base",
+        "type": "text",
+        "hex": "#00C9FF",
+        "name": "laser",
+        "value": 0
+       }
+      ],
+      "decimalPlaces": {
+       "isEnforced": true,
+       "digits": 0
+      },
+      "note": "",
+      "showNoteWhenEmpty": false
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "09708a92c64a3000",
+    "attributes": {
+     "name": "Highest Connections per second Today  (Clone)",
+     "properties": {
+      "shape": "chronograf-v2",
+      "type": "single-stat",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: today(), stop: now())\n  |> filter(fn: (r) => r[\"_measurement\"] == \"VsConns\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> filter(fn: (r) => r[\"VSID\"] == v.VirtualServiceID)\n  |> derivative(unit: 1s, nonNegative: true)\n  |> max()\n",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "prefix": "",
+      "tickPrefix": "",
+      "suffix": "",
+      "tickSuffix": "",
+      "colors": [
+       {
+        "id": "base",
+        "type": "text",
+        "hex": "#00C9FF",
+        "name": "laser",
+        "value": 0
+       }
+      ],
+      "decimalPlaces": {
+       "isEnforced": true,
+       "digits": 0
+      },
+      "note": "",
+      "showNoteWhenEmpty": false
+     }
+    }
+   },
+   {
+    "type": "view",
+    "id": "09708af0538a3000",
+    "attributes": {
+     "name": "Highest Bytes per second Today",
+     "properties": {
+      "shape": "chronograf-v2",
+      "type": "single-stat",
+      "queries": [
+       {
+        "text": "from(bucket: \"axf\")\n  |> range(start: today(), stop: now())\n  |> filter(fn: (r) => r[\"_measurement\"] == \"VsBytes\")\n  |> filter(fn: (r) => r[\"Custid\"] == v.CustID)\n  |> filter(fn: (r) => r[\"Lmclusterid\"] == v.LoadMasterClusterID)\n  |> filter(fn: (r) => r[\"VSID\"] == v.VirtualServiceID)\n  |> derivative(unit: 1s, nonNegative: true)\n  |> max()\n",
+        "editMode": "advanced",
+        "name": "",
+        "builderConfig": {
+         "buckets": [],
+         "tags": [
+          {
+           "key": "_measurement",
+           "values": [],
+           "aggregateFunctionType": "filter"
+          }
+         ],
+         "functions": [
+          {
+           "name": "mean"
+          }
+         ],
+         "aggregateWindow": {
+          "period": "auto",
+          "fillValues": false
+         }
+        }
+       }
+      ],
+      "prefix": "",
+      "tickPrefix": "",
+      "suffix": "",
+      "tickSuffix": "",
+      "colors": [
+       {
+        "id": "base",
+        "type": "text",
+        "hex": "#00C9FF",
+        "name": "laser",
+        "value": 0
+       }
+      ],
+      "decimalPlaces": {
+       "isEnforced": true,
+       "digits": 0
+      },
+      "note": "",
+      "showNoteWhenEmpty": false
      }
     }
    },
