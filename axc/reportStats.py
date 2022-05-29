@@ -165,8 +165,13 @@ def main():
         # Sample Data
         vs['statuscode'] = 2            #0 is up. 1 LOR 2 DOWN
         vs['conns'] = int(i['TotalConns'])
+        vs['packets'] = int(i['TotalPkts'])
+        vs['bytes'] = int(i['TotalBytes'])
+        vs['bits'] = int(i['TotalBits'])
         vs['activeconns'] = int(i['ActiveConns'])
         vs['connrate'] = int(i['ConnsPerSec'])
+        #print(i['RttGlbAvg'])
+        #vs['avertt'] = int(i['RttGlbAvg'])
         vs['rs']=[]
         vslist.append(vs)
 
@@ -178,11 +183,19 @@ def main():
         rs['id'] = int(i['RSIndex'])
         rs['activeconns'] = int(i['ActivConns'])
         rs['connrate'] = int(i['ConnsPerSec'])
+        rs['conns'] = int(i['Conns'])
+        rs['packets'] = int(i['Pkts'])
+        rs['bytes'] = int(i['Bytes'])
+        rs['bits'] = int(i['Bits'])
+        #rs['avertt'] = int(i['RttGlbAvg'])
+
         rslist.append(rs)
 
         # get Status from Status dictionary
         rs['status'] = rsStatusByID[i['RSIndex']]
         rs['statuscode'] = 0            #0 up 1 unavailalble
+
+
 
 
     #print(vslist)
