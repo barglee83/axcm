@@ -6,6 +6,7 @@ import xmltodict
 import json
 import getopt
 import sys
+import time
 
 
 def main():
@@ -80,23 +81,48 @@ def main():
 
 
     #--TEMP
+    vsidNicknameMap={}
     rsStatusByID={}
     url = "https://" + user + ":" + password + "@" + lmip + ":" + port + "/access/listvs"
     print("reportStats.py -- LoadMaster Query",url)
     response = requests.get(url, verify=False)
     obj = xmltodict.parse(response.text)
     rslist2 = []
+    namelist={}
     for i in obj['Response']['Success']['Data']['VS']:      #Array of VS's
         currentRs = i['Rs']
-        currentRs = [currentRs] if isinstance(currentRs, dict) else currentRs # convert to List if not already
+        currentRs = [currentRs] if isinstance(currentRs, dict) else currentRs # convert to List if not already # Work Around Bad LoadMaster Presentation of Data
         for x in currentRs:
             #print("RSID:",x['RsIndex'],"RS Status:",x['Status'],"VSID", i['Index'])
             rsStatusByID[x['RsIndex']]=x['Status']
+
+        # Get Dictionary of VS Name and IDs
+        vsidNicknameMap[i['Index']]=i['NickName']
+        print(vsidNicknameMap)
+
+
+
+
+
     url = "https://" + user + ":" + password + "@" + lmip + ":" + port + "/access/get?param=version"
     print("reportStats.py -- LoadMaster Query", url)
     response = requests.get(url, verify=False)
     obj = xmltodict.parse(response.text)
     lm['firmware']=obj['Response']['Success']['Data']['version']
+
+
+    license={}
+
+    url = "https://" + user + ":" + password + "@" + lmip + ":" + port + "/access/licenseinfo"
+    print("reportStats.py -- LoadMaster Query", url)
+    response = requests.get(url, verify=False)
+    obj = xmltodict.parse(response.text)
+
+    license['substier'] = obj['Response']['Success']['Data']['LicenseType']
+    license['subsexpiry'] = obj['Response']['Success']['Data']['SupportUntil']
+    license['subsexpirydays'] = round((int(obj['Response']['Success']['Data']['SubscriptionEntry1']['Expires']) - int(time.time()))/86400)
+
+    lm['license'] = license
 
     url = "https://" + user + ":" + password + "@" + lmip + ":" + port + "/access/stats"
     print("reportStats.py -- LoadMaster Query",url)
@@ -129,11 +155,15 @@ def main():
     rslist=[]
     for i in obj['Response']['Success']['Data']['Vs']:
         vs = {}
-        #vs['name']=i['NickName']
+        vs['nickname']=vsidNicknameMap[i['Index']]
+        vs['loadmaster']=lmcluster['name']
         vs['ip'] = i['VSAddress']
         vs['port'] = i['VSPort']
         vs['id']= int(i['Index'])
         vs['status'] = i['Status']
+
+        # Sample Data
+        vs['statuscode'] = 2            #0 is up. 1 LOR 2 DOWN
         vs['conns'] = int(i['TotalConns'])
         vs['activeconns'] = int(i['ActiveConns'])
         vs['connrate'] = int(i['ConnsPerSec'])
@@ -152,6 +182,7 @@ def main():
 
         # get Status from Status dictionary
         rs['status'] = rsStatusByID[i['RSIndex']]
+        rs['statuscode'] = 0            #0 up 1 unavailalble
 
 
     #print(vslist)
