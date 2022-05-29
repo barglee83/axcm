@@ -120,7 +120,12 @@ def main():
 
     license['substier'] = obj['Response']['Success']['Data']['LicenseType']
     license['subsexpiry'] = obj['Response']['Success']['Data']['SupportUntil']
-    license['subsexpirydays'] = int(round((int(obj['Response']['Success']['Data']['SubscriptionEntry1']['Expires']) - int(time.time()))/86400))
+
+    print(obj['Response']['Success']['Data']['SubscriptionEntry1']['Expires'])
+    print(round(time.time()))
+    print(round((int(obj['Response']['Success']['Data']['SubscriptionEntry1']['Expires'])-round(time.time()))/86400))
+    license['subsexpirydays'] = round((int(obj['Response']['Success']['Data']['SubscriptionEntry1']['Expires'])-round(time.time()))/86400)
+    #license['subsexpirydays'] = round((int(obj['Response']['Success']['Data']['SubscriptionEntry1']['Expires']) - int(time.time()))/86400)
 
     lm['license'] = license
 
