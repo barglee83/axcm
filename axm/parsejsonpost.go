@@ -45,17 +45,24 @@ type LoadMaster struct {
 		License  struct{
 	        Substier        string `json:"substier"`
 		    Subsexpiry      string `json:"subsexpiry"`
-		    Subsexpirydays   int `json:"subsexpirydays"`
+		    Subsexpirydays   uint `json:"subsexpirydays"`
 		} `json:"license"`
 	} `json:"lm"`
 	Vs []struct {
+	    Nickname    string `json:"nickname"`
+	    Loadmaster    string `json:"loadmaster"`
 		IP          string `json:"ip"`
 		Port        string `json:"port"`
 		ID          int `json:"id"`
 		Status      string `json:"status"`
-		Conns       int `json:"conns"`
+		StatusCode      int `json:"statuscode"`
 		Activeconns int `json:"activeconns"`
 		Connrate    int `json:"connrate"`
+
+		Conns       int `json:"conns"`
+		Packets    int `json:"packets"`
+		Bytes    int `json:"bytes"`
+		Bits    int `json:"bits"`
 		Rs          []struct {
 			Vsid        int `json:"vsid"`
 			IP          string `json:"ip"`
@@ -64,6 +71,10 @@ type LoadMaster struct {
 			Activeconns int `json:"activeconns"`
 			Connrate    int `json:"connrate"`
 			Status        string `json:"status"`
+			Conns    int `json:"conns"`
+			Packets    int `json:"packets"`
+			Bytes    int `json:"bytes"`
+			Bits    int `json:"bits"`
 		} `json:"rs"`
 	} `json:"vs"`
 }
@@ -106,6 +117,8 @@ func writeToInflux(lmc LoadMaster) {
     fmt.Println(fmt.Sprintf("lmfw,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Firmware=\""+lm.Firmware+"\""))
     //fmt.Println(fmt.Sprintf("lmsubs,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Substier=\""+lm.License.Substier+"\",Subsexpiry=\""+lm.License.Subsexpiry+"\",Subsexpirydays=\""+strconv.Itoa(lm.License.Subsexpirydays)+"\""))
     fmt.Println(fmt.Sprintf("lmsubs,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Substier=\""+lm.License.Substier+"\""))
+    //fmt.Println(fmt.Sprintf("lmsubsexp,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Subsexpiry=\""+lm.License.Subsexpiry+"\""))
+    //fmt.Println(fmt.Sprintf("lmsubsexpdays,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Subsexpirydays=\""+lm.License.Subsexpirydays+"\""))
 
     writeAPI.WriteRecord(fmt.Sprintf("lmcpu,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname User="+strconv.Itoa(lm.Cpu.User)+",System="+strconv.Itoa(lm.Cpu.System)+",Idle="+strconv.Itoa(lm.Cpu.Idle)+",Iowait="+strconv.Itoa(lm.Cpu.Iowait)))
     writeAPI.WriteRecord(fmt.Sprintf("lmmem,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Used="+strconv.Itoa(lm.Memory.Percentmemused)+",Free="+strconv.Itoa(lm.Memory.Memfree)+",Memused="+strconv.Itoa(lm.Memory.Memused)))
@@ -124,10 +137,35 @@ func writeToInflux(lmc LoadMaster) {
   }
   //writeAPI.WriteRecord(fmt.Sprintf("vsconns,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID=1 Conns=123"))
   for _, vs := range lmc.Vs {
+    fmt.Println((fmt.Sprintf("VsStatus,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Status=\""+vs.Status+"\"")))
+    fmt.Println(fmt.Sprintf("VsStatusCode,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" StatusCode="+strconv.Itoa(vs.StatusCode)))
     fmt.Println(fmt.Sprintf("VsConns,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Conns)))
+    fmt.Println(fmt.Sprintf("Vsname,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Nickname=\""+vs.Nickname+"\""))
+    fmt.Println(fmt.Sprintf("Vsloadmaster,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Loadmaster=\""+vs.Loadmaster+"\""))
+
+    fmt.Println(fmt.Sprintf("VsConns,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Conns)))
+    fmt.Println(fmt.Sprintf("VsPackets,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Packets)))
+    fmt.Println(fmt.Sprintf("VsBytes,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Bytes)))
+    fmt.Println(fmt.Sprintf("VsBits,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Bits)))
+
+    writeAPI.WriteRecord(fmt.Sprintf("Vsname,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Nickname=\""+vs.Nickname+"\""))
+    writeAPI.WriteRecord(fmt.Sprintf("Vsloadmaster,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Loadmaster=\""+vs.Loadmaster+"\""))
+    writeAPI.WriteRecord(fmt.Sprintf("VsIp,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Ip=\""+vs.IP+"\""))
+    writeAPI.WriteRecord(fmt.Sprintf("VsPort,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Port=\""+vs.Port+"\""))
+
     writeAPI.WriteRecord(fmt.Sprintf("vsconns,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Conns)))
+    writeAPI.WriteRecord("VsPackets,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Packets))
+    writeAPI.WriteRecord("VsBytes,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Bytes))
+    writeAPI.WriteRecord("VsBits,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Bits))
+
+
+
+
+
     writeAPI.WriteRecord(fmt.Sprintf("VsActiveconns,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Activeconns)))
     writeAPI.WriteRecord(fmt.Sprintf("VsConnrate,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Connrate)))
+    writeAPI.WriteRecord(fmt.Sprintf("VsStatusCode,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" StatusCode="+strconv.Itoa(vs.StatusCode)))
+    writeAPI.WriteRecord(fmt.Sprintf("VsStatus,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Status=\""+vs.Status+"\""))
     for _, rs := range vs.Rs {
         writeAPI.WriteRecord(fmt.Sprintf("RsActiveconns,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+",RSID="+strconv.Itoa(rs.ID)+" Conns="+strconv.Itoa(rs.Activeconns)))
         writeAPI.WriteRecord(fmt.Sprintf("RsConnrate,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+",RSID="+strconv.Itoa(rs.ID)+" Conns="+strconv.Itoa(rs.Connrate)))
