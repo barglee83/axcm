@@ -25,11 +25,17 @@ type LoadMaster struct {
 	Name   string `json:"name"`
 	Lmclusterid   int    `json:"lmclusterid"`
 	Mode string `json:"mode"`
+	TotalConns int `json:"totalconns"`
+	TotalBits int `json:"totalbits"`
+	TotalBytes int `json:"totalbytes"`
+	TotalPackets int `json:"totalpackets"`
 	Lm     []struct {
 		Name string `json:"name"`
 		IP   string `json:"ip"`
 		Model string `json:"model"`
 		Firmware string `json:"firmware"`
+
+
 		Cpu  struct{
 		    User          int `json:"user"`
 		    System        int `json:"system"`
@@ -45,7 +51,7 @@ type LoadMaster struct {
 		License  struct{
 	        Substier        string `json:"substier"`
 		    Subsexpiry      string `json:"subsexpiry"`
-		    Subsexpirydays   uint `json:"subsexpirydays"`
+		    Subsexpirydays   int `json:"subsexpirydays"`
 		} `json:"license"`
 	} `json:"lm"`
 	Vs []struct {
@@ -109,6 +115,22 @@ func writeToInflux(lmc LoadMaster) {
   fmt.Println(fmt.Sprintf("lmame,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Lmname=\""+lmc.Name+"\""))
   writeAPI.WriteRecord(fmt.Sprintf("lmname,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Lmname=\""+lmc.Name+"\""))
 
+  fmt.Println(fmt.Sprintf("totalconns,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname lmtotalconns="+strconv.Itoa(lmc.TotalConns)))
+  writeAPI.WriteRecord(fmt.Sprintf("totalconns,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname lmtotalconns="+strconv.Itoa(lmc.TotalConns)))
+
+  fmt.Println(fmt.Sprintf("totalbits,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname lmtotalbits="+strconv.Itoa(lmc.TotalBits)))
+  writeAPI.WriteRecord(fmt.Sprintf("totalbits,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname lmtotalbits="+strconv.Itoa(lmc.TotalBits)))
+
+  fmt.Println(fmt.Sprintf("totalbytes,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname lmtotalbytes="+strconv.Itoa(lmc.TotalBytes)))
+  writeAPI.WriteRecord(fmt.Sprintf("totalbytes,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname lmtotalbytes="+strconv.Itoa(lmc.TotalBytes)))
+
+  fmt.Println(fmt.Sprintf("totalpackets,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname lmtotalpackets="+strconv.Itoa(lmc.TotalPackets)))
+  writeAPI.WriteRecord(fmt.Sprintf("totalpackets,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname lmtotalpackets="+strconv.Itoa(lmc.TotalPackets)))
+
+
+
+
+
   // write line protocol
   // For each LM
   for _, lm := range lmc.Lm {
@@ -148,15 +170,18 @@ func writeToInflux(lmc LoadMaster) {
     fmt.Println(fmt.Sprintf("VsBytes,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Bytes)))
     fmt.Println(fmt.Sprintf("VsBits,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Bits)))
 
+
+
+
     writeAPI.WriteRecord(fmt.Sprintf("Vsname,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Nickname=\""+vs.Nickname+"\""))
     writeAPI.WriteRecord(fmt.Sprintf("Vsloadmaster,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Loadmaster=\""+vs.Loadmaster+"\""))
     writeAPI.WriteRecord(fmt.Sprintf("VsIp,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Ip=\""+vs.IP+"\""))
     writeAPI.WriteRecord(fmt.Sprintf("VsPort,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Port=\""+vs.Port+"\""))
 
-    writeAPI.WriteRecord(fmt.Sprintf("vsconns,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Conns)))
-    writeAPI.WriteRecord("VsPackets,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Packets))
-    writeAPI.WriteRecord("VsBytes,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Bytes))
-    writeAPI.WriteRecord("VsBits,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Bits))
+    writeAPI.WriteRecord(fmt.Sprintf("VsConns,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Conns)))
+    writeAPI.WriteRecord(fmt.Sprintf("VsPackets,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Packets)))
+    writeAPI.WriteRecord(fmt.Sprintf("VsBytes,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Bytes)))
+    writeAPI.WriteRecord(fmt.Sprintf("VsBits,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Bits)))
 
 
 
@@ -169,8 +194,18 @@ func writeToInflux(lmc LoadMaster) {
     for _, rs := range vs.Rs {
         writeAPI.WriteRecord(fmt.Sprintf("RsActiveconns,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+",RSID="+strconv.Itoa(rs.ID)+" Conns="+strconv.Itoa(rs.Activeconns)))
         writeAPI.WriteRecord(fmt.Sprintf("RsConnrate,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+",RSID="+strconv.Itoa(rs.ID)+" Conns="+strconv.Itoa(rs.Connrate)))
+        writeAPI.WriteRecord(fmt.Sprintf("RsStatus,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+",RSID="+strconv.Itoa(rs.ID)+" Status=\""+rs.Status+"\""))
 
 
+        fmt.Println(fmt.Sprintf("RsConns,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+",RSID="+strconv.Itoa(rs.ID)+" Conns="+strconv.Itoa(rs.Conns)))
+        fmt.Println(fmt.Sprintf("RsPackets,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+",RSID="+strconv.Itoa(rs.ID)+" Packets="+strconv.Itoa(rs.Packets)))
+        fmt.Println(fmt.Sprintf("RsBytes,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+",RSID="+strconv.Itoa(rs.ID)+" Bytes="+strconv.Itoa(rs.Bytes)))
+        fmt.Println(fmt.Sprintf("RsBits,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+",RSID="+strconv.Itoa(rs.ID)+" Bits="+strconv.Itoa(rs.Bits)))
+
+        writeAPI.WriteRecord(fmt.Sprintf("RsConns,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+",RSID="+strconv.Itoa(rs.ID)+" Conns="+strconv.Itoa(rs.Conns)))
+        writeAPI.WriteRecord(fmt.Sprintf("RsPackets,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+",RSID="+strconv.Itoa(rs.ID)+" Packets="+strconv.Itoa(rs.Packets)))
+        writeAPI.WriteRecord(fmt.Sprintf("RsBytes,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+",RSID="+strconv.Itoa(rs.ID)+" Bytes="+strconv.Itoa(rs.Bytes)))
+        writeAPI.WriteRecord(fmt.Sprintf("RsBits,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+",RSID="+strconv.Itoa(rs.ID)+" Bits="+strconv.Itoa(rs.Bits)))
     }
   }
 
