@@ -48,6 +48,15 @@ type LoadMaster struct {
 		    Memfree          int `json:"memfree"`
 		    Percentmemfree   int `json:"percentmemfree"`
 		} `json:"memory"`
+		Disk  struct{
+		    VarLogGbTotal int `json:"varloggbtotal"`
+		    VarLogGbUsed   int `json:"varloggbused"`
+		    VarLogGbFree   int `json:"varloggbfree"`
+		    VarLogUserGbTotal int `json:"varlogusergbtotal"`
+		    VarLogUserGbUsed   int `json:"varlogusergbused"`
+		    VarLogUserGbFree   int `json:"varlogusergbfree"`
+
+		} `json:"disk"`
 		License  struct{
 	        Substier        string `json:"substier"`
 		    Subsexpiry      string `json:"subsexpiry"`
@@ -136,6 +145,9 @@ func writeToInflux(lmc LoadMaster) {
   for _, lm := range lmc.Lm {
     fmt.Println(fmt.Sprintf("lmcpu,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname User="+strconv.Itoa(lm.Cpu.User)+",System="+strconv.Itoa(lm.Cpu.System)+",Idle="+strconv.Itoa(lm.Cpu.Idle)+",Iowait="+strconv.Itoa(lm.Cpu.Iowait)))
     fmt.Println(fmt.Sprintf("lmmem,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Used="+strconv.Itoa(lm.Memory.Percentmemused)+",Free="+strconv.Itoa(lm.Memory.Memfree)+",Memused="+strconv.Itoa(lm.Memory.Memused)))
+    fmt.Println(fmt.Sprintf("lmdisk,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname VarLogGbTotal="+strconv.Itoa(lm.Disk.VarLogGbTotal)+",VarLogGbUsed="+strconv.Itoa(lm.Disk.VarLogGbUsed)+",VarLogGbFree="+strconv.Itoa(lm.Disk.VarLogGbFree)))
+
+
     fmt.Println(fmt.Sprintf("lmfw,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Firmware=\""+lm.Firmware+"\""))
     //fmt.Println(fmt.Sprintf("lmsubs,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Substier=\""+lm.License.Substier+"\",Subsexpiry=\""+lm.License.Subsexpiry+"\",Subsexpirydays=\""+strconv.Itoa(lm.License.Subsexpirydays)+"\""))
     fmt.Println(fmt.Sprintf("lmsubs,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Substier=\""+lm.License.Substier+"\""))
@@ -144,6 +156,9 @@ func writeToInflux(lmc LoadMaster) {
 
     writeAPI.WriteRecord(fmt.Sprintf("lmcpu,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname User="+strconv.Itoa(lm.Cpu.User)+",System="+strconv.Itoa(lm.Cpu.System)+",Idle="+strconv.Itoa(lm.Cpu.Idle)+",Iowait="+strconv.Itoa(lm.Cpu.Iowait)))
     writeAPI.WriteRecord(fmt.Sprintf("lmmem,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Used="+strconv.Itoa(lm.Memory.Percentmemused)+",Free="+strconv.Itoa(lm.Memory.Memfree)+",Memused="+strconv.Itoa(lm.Memory.Memused)))
+    writeAPI.WriteRecord(fmt.Sprintf("lmdisk,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname VarLogGbTotal="+strconv.Itoa(lm.Disk.VarLogGbTotal)+",VarLogGbUsed="+strconv.Itoa(lm.Disk.VarLogGbUsed)+",VarLogGbFree="+strconv.Itoa(lm.Disk.VarLogGbFree)))
+
+
     writeAPI.WriteRecord(fmt.Sprintf("lmfw,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Firmware=\""+lm.Firmware+"\""))
     writeAPI.WriteRecord(fmt.Sprintf("lmsubs,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,Name=Xname Substier=\""+lm.License.Substier+"\""))
 

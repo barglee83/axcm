@@ -124,7 +124,7 @@ def main():
     print(obj['Response']['Success']['Data']['SubscriptionEntry1']['Expires'])
     print(round(time.time()))
     print(round((int(obj['Response']['Success']['Data']['SubscriptionEntry1']['Expires'])-round(time.time()))/86400))
-    license['subsexpirydays'] = round((int(obj['Response']['Success']['Data']['SubscriptionEntry1']['Expires'])-round(time.time()))/86400)
+    license['subsexpirydays'] = int(round((int(obj['Response']['Success']['Data']['SubscriptionEntry1']['Expires'])-round(time.time()))/86400))
     #license['subsexpirydays'] = round((int(obj['Response']['Success']['Data']['SubscriptionEntry1']['Expires']) - int(time.time()))/86400)
 
     lm['license'] = license
@@ -147,12 +147,28 @@ def main():
     memory['percentmemfree'] = int(obj['Response']['Success']['Data']['Memory']['percentmemfree'])
 
 
+    disk={}
+    for i in obj['Response']['Success']['Data']['DiskUsage']['partition']:
+        if i['name'] == '/var/log':
+            disk['varloggbtotal']=int(float(i['GBtotal'])*1000)
+            disk['varloggbused'] = int(float(i['GBused'])*1000)
+            disk['varloggbfree'] = int(float(i['GBfree'])*1000)
+        if i['name'] == '/var/log/userlog':
+            disk['varloguserlogbtotal']=int(float(i['GBtotal'])*1000)
+            disk['varlogusergbused'] = int(float(i['GBused'])*1000)
+            disk['varlogusergbfree'] = int(float(i['GBfree'])*1000)
+
+
+
+
     lm['cpu'] = cpu
     lm['memory'] = memory
+    lm['disk'] = disk
 
-
-
-
+    lmcluster['totalconns']=int(obj['Response']['Success']['Data']['VStotals']['TotalConns'])
+    lmcluster['totalbits']=int(obj['Response']['Success']['Data']['VStotals']['TotalBits'])
+    lmcluster['totalbytes']=int(obj['Response']['Success']['Data']['VStotals']['TotalBytes'])
+    lmcluster['totalpackets']=int(obj['Response']['Success']['Data']['VStotals']['TotalPackets'])
 
     lmcluster['lm'].append(lm)
 
@@ -230,21 +246,11 @@ def main():
     x = requests.post(url, data=app_json, headers=headers, verify=False)
     print(x.text)
 
-
-
-
-
-
 #
 # {Custid:1001 Name:CUSTLM Lmclusterid:1
 # Lm:[{Name:HA1 IP:10.0.0.9 Mode:single Cpu:{User:0 System:0 Idle:99 Iowait:0} Memory:{Memused:298740 Percentmemused:68 Memfree:134300 Percentmemfree:32}}] Vs:[{IP:10.0.0.9 Port:80 ID:1 Status:up Conns:14446 Activeconns:0 Connrate:0 Rs:[{Vsid:1 IP:10.0.0.5 Port:9081 ID:1 Activeconns:0 Connrate:0 Status:Up} {Vsid:1 IP:10.0.0.5 Port:9082 ID:2 Activeconns:0 Connrate:0 Status:Up}]} {IP:10.0.0.9 Port:443 ID:2 Status:up Conns:39 Activeconns:0 Connrate:0 Rs:[{Vsid:2 IP:10.0.0.5 Port:8081 ID:3 Activeconns:0 Connrate:0 Status:Up} {Vsid:2 IP:10.0.0.5 Port:8082 ID:4 Activeconns:0 Connrate:0 Status:Up}]}]}
 #
 #
-#
-#
-#
-
-
 
 if __name__ == '__main__':
     main()
