@@ -65,6 +65,7 @@ type LoadMaster struct {
 	} `json:"lm"`
 	Vs []struct {
 	    Nickname    string `json:"nickname"`
+	    Application string `json:"application"`
 	    Loadmaster    string `json:"loadmaster"`
 		IP          string `json:"ip"`
 		Port        string `json:"port"`
@@ -174,26 +175,28 @@ func writeToInflux(lmc LoadMaster) {
   }
   //writeAPI.WriteRecord(fmt.Sprintf("vsconns,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID=1 Conns=123"))
   for _, vs := range lmc.Vs {
-    fmt.Println((fmt.Sprintf("VsStatus,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Status=\""+vs.Status+"\"")))
-    fmt.Println(fmt.Sprintf("VsStatusCode,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" StatusCode="+strconv.Itoa(vs.StatusCode)))
-    fmt.Println(fmt.Sprintf("VsConns,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Conns)))
-    fmt.Println(fmt.Sprintf("Vsname,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Nickname=\""+vs.Nickname+"\""))
-    fmt.Println(fmt.Sprintf("Vsloadmaster,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Loadmaster=\""+vs.Loadmaster+"\""))
+    //fmt.Println(fmt.Sprintf("VsStatusCode,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" StatusCode="+strconv.Itoa(vs.StatusCode)))
+    fmt.Println((fmt.Sprintf("VsStatus,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+",Application=\""+vs.Application+"\""+" Status=\""+vs.Status+"\"")))
+    fmt.Println(fmt.Sprintf("VsConns,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+",Application="+vs.Application+" Conns="+strconv.Itoa(vs.Conns)))
+    fmt.Println(fmt.Sprintf("Vsname,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+",Application=\""+vs.Application+"\""+" Nickname=\""+vs.Nickname+"\""))
+    fmt.Println(fmt.Sprintf("Vsloadmaster,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+",Application=\""+vs.Application+"\""+" Loadmaster=\""+vs.Loadmaster+"\""))
 
     fmt.Println(fmt.Sprintf("VsConns,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Conns)))
     fmt.Println(fmt.Sprintf("VsPackets,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Packets)))
     fmt.Println(fmt.Sprintf("VsBytes,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Bytes)))
     fmt.Println(fmt.Sprintf("VsBits,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Bits)))
 
-
-
-
     writeAPI.WriteRecord(fmt.Sprintf("Vsname,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Nickname=\""+vs.Nickname+"\""))
     writeAPI.WriteRecord(fmt.Sprintf("Vsloadmaster,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Loadmaster=\""+vs.Loadmaster+"\""))
     writeAPI.WriteRecord(fmt.Sprintf("VsIp,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Ip=\""+vs.IP+"\""))
     writeAPI.WriteRecord(fmt.Sprintf("VsPort,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Port=\""+vs.Port+"\""))
 
-    writeAPI.WriteRecord(fmt.Sprintf("VsConns,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Conns)))
+    writeAPI.WriteRecord((fmt.Sprintf("VsStatus,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+",Application=\""+vs.Application+"\""+" Status=\""+vs.Status+"\"")))
+    writeAPI.WriteRecord(fmt.Sprintf("VsConns,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+",Application="+vs.Application+" Conns="+strconv.Itoa(vs.Conns)))
+    writeAPI.WriteRecord(fmt.Sprintf("Vsname,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+",Application=\""+vs.Application+"\""+" Nickname=\""+vs.Nickname+"\""))
+    writeAPI.WriteRecord(fmt.Sprintf("Vsloadmaster,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+",Application=\""+vs.Application+"\""+" Loadmaster=\""+vs.Loadmaster+"\""))
+
+
     writeAPI.WriteRecord(fmt.Sprintf("VsPackets,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Packets)))
     writeAPI.WriteRecord(fmt.Sprintf("VsBytes,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Bytes)))
     writeAPI.WriteRecord(fmt.Sprintf("VsBits,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Bits)))
@@ -205,7 +208,8 @@ func writeToInflux(lmc LoadMaster) {
     writeAPI.WriteRecord(fmt.Sprintf("VsActiveconns,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Activeconns)))
     writeAPI.WriteRecord(fmt.Sprintf("VsConnrate,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Conns="+strconv.Itoa(vs.Connrate)))
     writeAPI.WriteRecord(fmt.Sprintf("VsStatusCode,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" StatusCode="+strconv.Itoa(vs.StatusCode)))
-    writeAPI.WriteRecord(fmt.Sprintf("VsStatus,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+" Status=\""+vs.Status+"\""))
+
+
     for _, rs := range vs.Rs {
         writeAPI.WriteRecord(fmt.Sprintf("RsActiveconns,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+",RSID="+strconv.Itoa(rs.ID)+" Conns="+strconv.Itoa(rs.Activeconns)))
         writeAPI.WriteRecord(fmt.Sprintf("RsConnrate,Custid="+strconv.Itoa(lmc.Custid)+",Lmclusterid=1,VSID="+strconv.Itoa(vs.ID)+",RSID="+strconv.Itoa(rs.ID)+" Conns="+strconv.Itoa(rs.Connrate)))
@@ -341,12 +345,13 @@ func parseGhPost(rw http.ResponseWriter, request *http.Request) {
 
     switch request.Method {
       case "GET":
-            //fmt.Println("GET",request.URL.Path)
+            fmt.Println("GET",request.URL.Path)
             fmt.Printf("-------- SERVING OF LM CONFIG --------\n")
             filename= "config_"+strings.ReplaceAll(request.URL.Path, "/", "")+".json"
-            //fmt.Println(filename)
+            fmt.Println(filename)
             //See how old My Config is
             filestat, _ := os.Stat(filename)
+            fmt.Println(filestat)
             file, _ := ioutil.ReadFile(filename)
             json.Unmarshal(file, &config)
             config.Time=filestat.ModTime().Unix()
