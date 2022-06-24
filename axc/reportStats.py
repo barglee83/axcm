@@ -176,7 +176,8 @@ def main():
     rslist=[]
     for i in obj['Response']['Success']['Data']['Vs']:
         vs = {}
-        vs['nickname']=vsidNicknameMap[i['Index']]
+        vs['nickname']=vsidNicknameMap[i['Index']].rsplit('-',1)[0]
+        vs['application'] = vsidNicknameMap[i['Index']].rsplit('-',1)[1]
         vs['loadmaster']=lmcluster['name']
         vs['ip'] = i['VSAddress']
         vs['port'] = i['VSPort']

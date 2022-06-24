@@ -1,5 +1,5 @@
 
-# AXCM
+# Project Insight
 
 Software for gaining Telemetry Insights from LoadMaster, Generating Events and Syncing Config
 
@@ -11,6 +11,11 @@ Software for gaining Telemetry Insights from LoadMaster, Generating Events and S
 
 #### Requirements
 LoadMaster
+> Syslog Pointed at AXC
+> ESP on with Delegate to Server
+> Disable Local Extended ESP Logs
+> Enable System Debug ad on Vs enable Full Debug+ HTTP Headers
+
 AXC deployed with LoadMaster Creds (user/pass etc)
 AXM Running. This can be using 
 1. Cloud Version dev.ax.barglee.com with apikey and custid 
@@ -44,6 +49,28 @@ log { source(sessions); destination(d_syslog_udp);};
 ```
 
 `/usr/local/bin/logprocessing.sh` Is the Shell Script that can be Started on Boot through `/etc/systemd/system/sample.service`
+
+e.g.
+```[Unit]
+Description=Description for sample script goes here
+After=network.target
+
+[Service]
+Type=idle
+ExecStart=/usr/local/bin/logprocessing.sh
+
+TimeoutStartSec=0
+
+[Install]
+WantedBy=default.target
+```
+
+Environment Variables hee: /etc/profile.d/axf.sh 
+
+
+
+
+/etc/profile.d/axenv.sh is where Global Variables are stored
 
 
 ##### Reporting of Stats
