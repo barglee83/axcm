@@ -160,8 +160,8 @@ cat axcm/axc/axfcron | sort -u | crontab -
 
 4. set environment Variables:
 
-cd /etc/profile.d/
-vi axenv.sh
+``cd /etc/profile.d/``
+``vi axenv.sh```
 
 ```
 AXFON=Y
@@ -225,6 +225,9 @@ AXFLMPORT=8443
     ``sudo yum install git``   
        
     ``sudo yum install golang``
+    
+    ``sudo yum install docker``
+    ``sudo systemctl start docker``
     
     
     
