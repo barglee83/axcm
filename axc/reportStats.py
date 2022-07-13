@@ -348,8 +348,8 @@ def main():
     print(headers)
 
     #UNCOMMENT WHEN DONE!
-    #x = requests.post(url, data=app_json, headers=headers, verify=False)
-    #print(x.text)
+    x = requests.post(url, data=app_json, headers=headers, verify=False)
+    print(x.text)
 
 #
 # {Custid:1001 Name:CUSTLM Lmclusterid:1
