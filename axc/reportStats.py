@@ -12,7 +12,7 @@ import time
 def main():
     full_cmd_arguments = sys.argv
     argument_list = full_cmd_arguments[1:]
-    short_options = "i:o:u:p:c:l:x:a:"
+    short_options = "i:o:u:p:c:l:x:a:z:"
     long_options = ["help"]
     try:
         arguments, values = getopt.getopt(argument_list, short_options, long_options)
@@ -20,6 +20,8 @@ def main():
         # Output error, and return with an error code
         print(str(err))
         sys.exit(2)
+
+    endpointport=443
 
     for current_argument, current_value in arguments:
         if current_argument in ("-i"):
@@ -38,6 +40,8 @@ def main():
             endpoint = current_value
         elif current_argument in ("-a"):
             apikey = current_value
+        elif current_argument in ("-z"):
+            endpointport = current_value
         #elif current_argument in ("-m"):
         #    lmclusterid = current_value
 
@@ -343,7 +347,11 @@ def main():
 
     headers = {}
     headers['apikey']= apikey
-    url = 'https://'+endpoint+'/'+custid+"_"+lmid
+
+    if (endpointport ==443):
+        url = 'https://'+endpoint+'/'+custid+"_"+lmid
+    else:
+        url = 'http://' + endpoint + ":" + endpointport + '/' + custid + "_" + lmid
     print("reportStats.py -- AXM URL",url)
     print(headers)
 
