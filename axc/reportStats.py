@@ -82,23 +82,32 @@ def main():
 
     #--TEMP
     vsidNicknameMap={}
+    vsidIPMap = {}
+    vsidPortMap = {}
     rsStatusByID={}
+    rsVsByID={}
     url = "https://" + user + ":" + password + "@" + lmip + ":" + port + "/access/listvs"
     print("reportStats.py -- LoadMaster Query",url)
     response = requests.get(url, verify=False)
-    obj = xmltodict.parse(response.text)
+    listvsobj = xmltodict.parse(response.text)
     rslist2 = []
     namelist={}
-    for i in obj['Response']['Success']['Data']['VS']:      #Array of VS's
-        currentRs = i['Rs']
-        currentRs = [currentRs] if isinstance(currentRs, dict) else currentRs # convert to List if not already # Work Around Bad LoadMaster Presentation of Data
-        for x in currentRs:
-            #print("RSID:",x['RsIndex'],"RS Status:",x['Status'],"VSID", i['Index'])
-            rsStatusByID[x['RsIndex']]=x['Status']
 
-        # Get Dictionary of VS Name and IDs
+
+    for i in listvsobj['Response']['Success']['Data']['VS']:      #Array of VS's
+        if "Rs" in i:
+            currentRs = i['Rs']
+            currentRs = [currentRs] if isinstance(currentRs, dict) else currentRs # convert to List if not already # Work Around Bad LoadMaster Presentation of Data
+            for x in currentRs:
+                print("RSID:",x['RsIndex'],"RS Status:",x['Status'],"VSID", i['Index'])
+                rsStatusByID[x['RsIndex']]=x['Status']
+                rsVsByID[int(x['RsIndex'])] = int(i['Index'])       # RSID-VSID
+            # Get Dictionary of VS Name and IDs
         vsidNicknameMap[i['Index']]=i['NickName']
         print(vsidNicknameMap)
+
+        print("RsStatusByID", rsStatusByID)
+        print("rsVsByID", rsVsByID)
 
 
 
@@ -173,9 +182,25 @@ def main():
     lmcluster['lm'].append(lm)
 
     vslist=[]
+    subvslist=[]
     rslist=[]
-    for i in obj['Response']['Success']['Data']['Vs']:
+    print("VSID Nickname Map",vsidNicknameMap)
+
+    print ("Object is",obj['Response']['Success']['Data']['Vs'])
+
+    # Get around LM behaviuor of returning wither list or single object. if one dict object convert to list
+    object = [obj['Response']['Success']['Data']['Vs']] if isinstance(obj['Response']['Success']['Data']['Vs'],dict) else obj['Response']['Success']['Data']['Vs']  # convert to List if not already # Work Around Bad LoadMaster Presentation of Data
+
+
+    vsidIPMap = {}
+    vsidPortMap = {}
+
+    #Parent VS's Only
+    for i in object:                      #This only returns Parent VSs. It also returns different types depending on asingle Vs or Multiple.
         vs = {}
+        print("i is", i)
+        print ("i index is")
+        print(i['Index'])
         vs['nickname']=vsidNicknameMap[i['Index']].rsplit('-',1)[0]
         vs['application'] = vsidNicknameMap[i['Index']].rsplit('-',1)[1]
         vs['loadmaster']=lmcluster['name']
@@ -183,6 +208,10 @@ def main():
         vs['port'] = i['VSPort']
         vs['id']= int(i['Index'])
         vs['status'] = i['Status']
+        vs['type'] = 'vs'
+
+        vsidIPMap[i['Index']] = i['VSAddress']
+        vsidPortMap[i['Index']] = i['VSPort']
 
         # Sample Data
         vs['statuscode'] = 2            #0 is up. 1 LOR 2 DOWN
@@ -197,9 +226,69 @@ def main():
         vs['rs']=[]
         vslist.append(vs)
 
+    # need to iterate through and add all SubVSs too
+    # Get around LM behaviuor of returning wither list or single object. if one dict object convert to list
+
+    listvsobject = [listvsobj['Response']['Success']['Data']['VS']] if isinstance(listvsobj['Response']['Success']['Data']['VS'],dict) else listvsobj['Response']['Success']['Data']['VS']  # convert to List if not already # Work Around Bad LoadMaster Presentation of Data
+
+
+    print("\n\n\vs id map", vsidIPMap)
+    for i in listvsobject:
+        print("DO SECOND CHECK - i is", i)
+        print ("i index is")
+        print(i['Index'])
+        print(i['MasterVS'])        #This Value is 0 if its a SubVS and shows count of subVSs if a master. but is also 0 if normal VS
+        # Check if already in Vs List - if not add.
+        print("Vslist is", vslist)
+        alreadyadded=0
+        for vs in vslist:
+            print (vs['id'],"compare to",i['Index'])
+            print (type(vs['id']), "compare to", type(i['Index']))
+            if vs['id'] == int(i['Index']):
+                alreadyadded=1
+        if alreadyadded == 0:
+            vs = {}
+            vs['nickname'] = vsidNicknameMap[i['Index']].rsplit('-', 1)[0]
+            vs['application'] = vsidNicknameMap[i['Index']].rsplit('-', 1)[1]
+            vs['loadmaster'] = lmcluster['name']
+            vs['id'] = int(i['Index'])
+            vs['type'] = 'subvs'
+            vs['status'] = i['Status']
+            vs['rs'] = []
+            if int(i['MasterVSID'])>0:
+                vs['ip'] = 0                #need to inherit from MasterVS--- input VSID - get back IP
+                vs['port'] = 0                #need to inherit from MasterVS
+                vs['conns'] = 0                #need to inherit from RSs
+                vs['packets'] = 0                #need to inherit from RSs
+                vs['bytes'] = 0                #need to inherit from RSs
+                vs['bits'] = 0                #need to inherit from RSs
+                vs['activeconns'] = 0                #need to inherit from RSs
+                vs['connrate'] = 0                #CANNOT inherit from RSs
+                #print("\n\nindex is",i['Index'])
+                #print(vsidIPMap['1'])
+                vs['ip']=vsidIPMap[i['MasterVSID']]
+                vs['port']=vsidPortMap[i['MasterVSID']]
+
+
+
+
+            subvslist.append(vs)
+
+    vslist.extend(subvslist)
+
+
+    print("Final VS List",vslist)
+
+
+    # Need a dict of subvs-rs's an their vsids - Stored in rsVsByID
+
+
+    #print(rsVsByID)
+    #print(rsVsByID[44])
     for i in obj['Response']['Success']['Data']['Rs']:
         rs = {}
-        rs['vsid'] = int(i['VSIndex'])
+        #rs['vsid'] = int(i['VSIndex'])          # Need to add a separate check to see if Rs ispart of subVS
+        rs['vsid'] = rsVsByID[int(i['RSIndex'])]
         rs['ip'] = i['Addr']
         rs['port'] = i['Port']
         rs['id'] = int(i['RSIndex'])
@@ -225,12 +314,25 @@ def main():
     #print(rslist)
 
 
+    print("VS LIST", vslist)
     # Need to Update this to get RS Status.
     for vs in vslist:
         for rs in rslist:
             if rs['vsid']==vs['id']:
                 #print(rs['ip']+"matches"+vs['ip'])
                 vs['rs'].append(rs)
+                #If the VS is A SubVs calcualte metrics based on Rs sums
+        if vs['type']=='subvs':
+            print("SubVS Match",vs)
+            for rs in vs['rs']:
+                vs['conns']+=rs['conns']
+                vs['packets'] += rs['packets']
+                vs['bytes'] += rs['conns']
+                vs['bits'] += rs['packets']
+                vs['activeconns'] += rs['activeconns']
+
+
+
 
     lmcluster['vs']=vslist
     #print(lmcluster)
@@ -244,8 +346,10 @@ def main():
     url = 'https://'+endpoint+'/'+custid+"_"+lmid
     print("reportStats.py -- AXM URL",url)
     print(headers)
-    x = requests.post(url, data=app_json, headers=headers, verify=False)
-    print(x.text)
+
+    #UNCOMMENT WHEN DONE!
+    #x = requests.post(url, data=app_json, headers=headers, verify=False)
+    #print(x.text)
 
 #
 # {Custid:1001 Name:CUSTLM Lmclusterid:1
