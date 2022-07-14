@@ -245,6 +245,16 @@ chmod +x *.py *.sh
 cat axcm/axc/axfcron | sort -u | crontab -
  ```
  
+ 
+ 3. Enable Syslog-ng
+    ```
+    sudo systemctl stop rsyslog
+    sudo systemctl disable rsyslog
+    vi /etc/syslog-ng/syslog-ng.conf
+    sudo systemctl start syslog-ng.service
+    
+    
+ 
 Logstash Grok:
 
 Reference: https://github.com/elastic/logstash/blob/v1.4.0/patterns/grok-patterns
