@@ -112,9 +112,9 @@ func writeToInflux(lmc LoadMaster) {
     //HARD SET VALUES NEEDS TO CHANGE
   //LOCAL const token = "9GBncCCkDiQlauEUxXUuMEwW33Jxl1R6TxeQpDBc23pbiCNs94f0kTScD-x-zfkUd5I3v-7r-Ua4y_kUe04Gjw=="
 
-  const token = "PzOZxZQ79tiT9VNV0Ngz5uI_A5FYxvTQTt6Cdzy244AL9P8ok9l_hByNLc_1woBccx0jXEvOmNs2sfWjaYWV6Q=="
-  const bucket = "axf"
-  const org = "kemp"
+  const token = "XXXXXX"
+  const bucket = "XXXXX"
+  const org = "XXXXX"
   client := influxdb2.NewClient("http://localhost:8086", token)
 
 
