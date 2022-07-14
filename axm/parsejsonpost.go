@@ -109,8 +109,6 @@ var filename string
 
 
 func writeToInflux(lmc LoadMaster) {
-    //HARD SET VALUES NEEDS TO CHANGE
-  //LOCAL const token = "9GBncCCkDiQlauEUxXUuMEwW33Jxl1R6TxeQpDBc23pbiCNs94f0kTScD-x-zfkUd5I3v-7r-Ua4y_kUe04Gjw=="
 
   const token = "XXXXXX"
   const bucket = "XXXXX"
