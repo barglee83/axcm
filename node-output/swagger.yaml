@@ -2,7 +2,7 @@
   "openapi" : "3.0.0",
   "info" : {
     "title" : "Swagger Petstore",
-    "description" : "This is a sample Petstore server.   can find\nout more about Swagger at\n[http://swagger.io](http://swagger.io) or on\n[irc.freenode.net, #swagger](http://swagger.io/irc/).\n",
+    "description" : "This is a sample Petstore server.   can find\nout more about Swagger at\n[http://swaggerasasasdasdasdasdasd.io](http://swagger.io) or on\n[irc.freenode.net, #swagger](http://swagger.io/irc/).\n",
     "termsOfService" : "http://swagger.io/termszcx/",
     "contact" : {
       "email" : "apiteam@swagger.io"
